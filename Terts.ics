@@ -1,0 +1,284 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//be.digitalia.fosdem//NONSGML 2.2.4//EN
+BEGIN:VEVENT
+UID:2850@2024@be.digitalia.fosdem
+DTSTAMP:20240202T161148Z
+DTSTART:20240203T090000Z
+DTEND:20240203T095000Z
+SUMMARY:Where have the women of tech history gone?
+DESCRIPTION:Ada Lovelace, Hedy Lamarr, the 'ENIAC Girls,' Grace Hopper, Joan Clarke... Stemming from the role of a calculator, the profession of a developer was initially considered a women's job, while hardware design was seen as a man's job. However, who are these women who have shaped the world of tech? Why don't we hear more about them? With Laura Durieux, you'll attempt to set the record straight bit by bit and provide role models in tech that you've always needed.
+X-ALT-DESC:<p>Ada Lovelace, Hedy Lamarr, the 'ENIAC Girls,' Grace Hopper, Joan Clarke... Stemming from the role of a calculator, the profession of a developer was initially considered a women's job, while hardware design was seen as a man's job. However, who are these women who have shaped the world of tech? Why don't we hear more about them? With Laura Durieux, you'll attempt to set the record straight bit by bit and provide role models in tech that you've always needed.</p>
+CLASS:PUBLIC
+CATEGORIES:Keynotes
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2850-where-have-the-women-of-tech-history-gone-/
+LOCATION:Janson
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Laura Durieux":https://fosdem.org/2024/schedule/speaker/laura_durieux/
+END:VEVENT
+BEGIN:VEVENT
+UID:1638@2024@be.digitalia.fosdem
+DTSTAMP:20240202T161148Z
+DTSTART:20240203T101500Z
+DTEND:20240203T103500Z
+SUMMARY:Writing your own Rust linter
+DESCRIPTION:This talk will show you how to write your own rust linter using the rustc_tools crate which allows you to have access to the rust compiler API. It can be quite useful if you need specific lints for a project and cannot add them to clippy.
+ It will explain how the compiler API works and give a small example at the end showing it in action.
+X-ALT-DESC:<p>This talk will show you how to write your own rust linter using the <code>rustc_tools</code> crate which allows you to have access to the rust compiler API. It can be quite useful if you need specific lints for a project and cannot add them to clippy.</p>
+ <p>It will explain how the compiler API works and give a small example at the end showing it in action.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-1638-writing-your-own-rust-linter/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Guillaume Gomez":https://fosdem.org/2024/schedule/speaker/guillaume_gomez/
+END:VEVENT
+BEGIN:VEVENT
+UID:2563@2024@be.digitalia.fosdem
+DTSTAMP:20240202T161148Z
+DTSTART:20240203T121000Z
+DTEND:20240203T123500Z
+SUMMARY:The Biome toolchain
+DESCRIPTION:Biome provides fast error-resilient IDE-ready formatters and linters for JavaScript, TypeScript, JSX, and JSON. It scores 97% compatibility with the Prettier test suite and implements more than 200 linter rules from ESLint, TypeScript ESLint, and others. In this talk I will introduce the unique features of Biome and how I improved the Biome's semantic model to support TypeScript. This will lead us to understand:
+ What is a semantic model and how TypeScript types coexist and interact with JavaScript values?
+ How to achieve top-notch IDE support using an error-resilient parsers and Concrete Syntax Trees?
+X-ALT-DESC:<p>Biome provides fast error-resilient IDE-ready formatters and linters for JavaScript, TypeScript, JSX, and JSON. It scores 97% compatibility with the Prettier test suite and implements more than 200 linter rules from ESLint, TypeScript ESLint, and others. In this talk I will introduce the unique features of Biome and how I improved the Biome's semantic model to support TypeScript. This will lead us to understand:</p>
+ <ul>
+ <li>What is a semantic model and how TypeScript types coexist and interact with JavaScript values?</li>
+ <li>How to achieve top-notch IDE support using an error-resilient parsers and Concrete Syntax Trees?</li>
+ </ul>
+CLASS:PUBLIC
+CATEGORIES:JavaScript devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2563-the-biome-toolchain/
+LOCATION:H.1301 (Cornil)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Victorien Elvinger":https://fosdem.org/2024/schedule/speaker/victorien_elvinger/
+END:VEVENT
+BEGIN:VEVENT
+UID:2972@2024@be.digitalia.fosdem
+DTSTAMP:20240202T161148Z
+DTSTART:20240203T150000Z
+DTEND:20240203T152500Z
+SUMMARY:Wayland's input-method is broken and it's my fault
+DESCRIPTION:I (re)designed the Wayland input-method protocol for Phosh. It worked! Until I tried to implement things like, you know, pre-edit, or moving to the next field. Then I had to switch to another project.
+ I'll describe what's wrong and where to find hope.
+ (Sorry.)
+X-ALT-DESC:<p>I (re)designed the <a href="https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/wip/text-input-next/unstable/text-input/text-input-unstable-v3.xml?ref_type=heads">Wayland input-method protocol</a> for <a href="https://phosh.mobi/">Phosh</a>. It worked! Until I tried to implement things like, you know, pre-edit, or moving to the next field. Then I had to switch to another project.</p>
+ <p>I'll describe what's wrong and where to find hope.</p>
+ <p>(Sorry.)</p>
+CLASS:PUBLIC
+CATEGORIES:FOSS on Mobile Devices devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2972-wayland-s-input-method-is-broken-and-it-s-my-fault/
+LOCATION:H.1309 (Van Rijn)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="dcz":https://fosdem.org/2024/schedule/speaker/dcz/
+END:VEVENT
+BEGIN:VEVENT
+UID:2321@2024@be.digitalia.fosdem
+DTSTAMP:20240202T161148Z
+DTSTART:20240203T154500Z
+DTEND:20240203T160500Z
+SUMMARY:Embedding Servo in Rust projects
+DESCRIPTION:Servo project have got a renewed activity since 2023 after a few slow years. One of the goals for this year has been making Servo a practical embeddable rendering engine, making easier to embed it in Rust projects. We’ve already come a long way in this area. A key achievement is our development of a minibrowser, which showcases how the Servo engine can be integrated.
+ In this talk, the main focus will be on the embedding of Servo. We will dive into the technical aspects of the minibrowser, demonstrating how our developments have streamlined the process of embedding Servo, the challenges we’ve faced, and the solutions we’ve developed. Additionally, we will also talk about the future direction of Servo embedding in Rust projects.
+X-ALT-DESC:<p>Servo project have got a renewed activity since 2023 after a few slow years. One of the goals for this year has been making Servo a practical embeddable rendering engine, making easier to embed it in Rust projects. We’ve already come a long way in this area. A key achievement is our development of a minibrowser, which showcases how the Servo engine can be integrated.</p>
+ <p>In this talk, the main focus will be on the embedding of Servo. We will dive into the technical aspects of the minibrowser, demonstrating how our developments have streamlined the process of embedding Servo, the challenges we’ve faced, and the solutions we’ve developed. Additionally, we will also talk about the future direction of Servo embedding in Rust projects.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2321-embedding-servo-in-rust-projects/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Rakhi Sharma":https://fosdem.org/2024/schedule/speaker/rakhi_sharma/
+END:VEVENT
+BEGIN:VEVENT
+UID:2853@2024@be.digitalia.fosdem
+DTSTAMP:20240202T161148Z
+DTSTART:20240203T170000Z
+DTEND:20240203T173000Z
+SUMMARY:Domain:  A modular Rust DNS toolkit
+DESCRIPTION:The "domain" crate is a Rust library that aims to provide a wide range of building blocks that are necessary or useful when building specialised DNS applications.
+ In this talk we will look at the history, current state, and future of the crate and how it differs from other offerings in the Rust ecosystem. We will explore how the crate aims to leverage Rust’s type system to make it easier to model the complexities of the DNS in a straightforward way that helps make it easier to build correct and efficient applications.
+X-ALT-DESC:<p>The "domain" crate is a Rust library that aims to provide a wide range
+ of building blocks that are necessary or useful when building specialised
+ DNS applications.</p>
+ <p>In this talk we will look at the history, current state, and future of the
+ crate and how it differs from other offerings in the Rust ecosystem. We will
+ explore how the crate aims to leverage Rust’s type system to make it easier
+ to model the complexities of the DNS in a straightforward way that helps
+ make it easier to build correct and efficient applications.</p>
+CLASS:PUBLIC
+CATEGORIES:DNS devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2853-domain-a-modular-rust-dns-toolkit/
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Martin Hoffmann":https://fosdem.org/2024/schedule/speaker/martin_hoffmann/
+END:VEVENT
+BEGIN:VEVENT
+UID:1838@2024@be.digitalia.fosdem
+DTSTAMP:20240202T161148Z
+DTSTART:20240204T081000Z
+DTEND:20240204T081500Z
+SUMMARY:CRA & PLD: [begin workshop] How will the open-source community adapt to the new EU Cyber Resilience Act and Product Liability Directive
+DESCRIPTION:This is the start of a two hour workshop exploring reactions to the PLD and CRA.
+X-ALT-DESC:<p>This is the start of a two hour workshop exploring reactions to the PLD and CRA.</p>
+CLASS:PUBLIC
+CATEGORIES:Open Source In The European Legislative Landscape devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-1838-cra-pld-begin-workshop-how-will-the-open-source-community-adapt-to-the-new-eu-cyber-resilience-act-and-product-liability-directive/
+LOCATION:AW1.120
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Maarten Aertsen":https://fosdem.org/2024/schedule/speaker/maarten_aertsen/
+END:VEVENT
+BEGIN:VEVENT
+UID:1931@2024@be.digitalia.fosdem
+DTSTAMP:20240202T161148Z
+DTSTART:20240204T090000Z
+DTEND:20240204T095000Z
+SUMMARY:You too could have made curl!
+DESCRIPTION:Daniel has taken the curl project to run in some 20 billion installations. He talks about what it takes to succeed with Open Source: patience, time, ups and downs, cooperation, fighting your impostor syndrome - all while having fun. There's no genius or magic trick behind successful open source. You can do it. The talk will of course be spiced up with anecdotes, experiences and stories from Daniel's 25 years of leading the curl project.
+X-ALT-DESC:<p>Daniel has taken the curl project to run in some 20 billion installations. He talks about what it takes to succeed with Open Source: patience, time, ups and downs, cooperation, fighting your impostor syndrome - all while having fun. There's no genius or magic trick behind successful open source. You can do it. The talk will of course be spiced up with anecdotes, experiences and stories from Daniel's 25 years of leading the curl project.</p>
+CLASS:PUBLIC
+CATEGORIES:Main Track - K Building
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-1931-you-too-could-have-made-curl-/
+LOCATION:K.1.105 (La Fontaine)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Daniel Stenberg":https://fosdem.org/2024/schedule/speaker/daniel_stenberg/
+END:VEVENT
+BEGIN:VEVENT
+UID:2847@2024@be.digitalia.fosdem
+DTSTAMP:20240202T161148Z
+DTSTART:20240204T101000Z
+DTEND:20240204T101500Z
+SUMMARY:Typhon: Nix-based continuous integration
+DESCRIPTION:Typhon is a prototype for Nix-based continuous integration, iterating over the concepts of Hydra and introducing actions to replace plugins. It is fully declarative and comes with a webapp.
+X-ALT-DESC:<p><a href="https://github.com/typhon-ci/typhon">Typhon</a> is a prototype for Nix-based continuous integration, iterating over the concepts of Hydra and introducing actions to replace plugins. It is fully declarative and comes with a webapp.</p>
+CLASS:PUBLIC
+CATEGORIES:Nix and NixOS devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2847-typhon-nix-based-continuous-integration/
+LOCATION:H.1302 (Depage)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Paul-Nicolas Madelaine":https://fosdem.org/2024/schedule/speaker/paul_nicolas_madelaine/
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Lucas Franceschino":https://fosdem.org/2024/schedule/speaker/lucas_franceschino/
+END:VEVENT
+BEGIN:VEVENT
+UID:1692@2024@be.digitalia.fosdem
+DTSTAMP:20240202T161148Z
+DTSTART:20240204T103000Z
+DTEND:20240204T105500Z
+SUMMARY:Running NLnet on NixOS
+DESCRIPTION:In this presentation, we explain how and why NLnet runs its systems on NixOS. NLnet has grown from a small organization handling tens of grants per year to one that handles hundreds of grants per year. The number of funding proposals is more than five times as high. Still, NLnet runs mostly on Free Software. In the last years we have moved most of our systems to NixOS and keep our system setups in a single git repository handled with nixos-rebuild. In this presentation, we explain how and why we do so.
+X-ALT-DESC:<p>In this presentation, we explain how and why NLnet runs its systems on NixOS.
+ NLnet has grown from a small organization handling tens of grants per year to one that handles hundreds of grants per year. The number of funding proposals is more than five times as high. Still, NLnet runs mostly on Free Software. In the last years we have moved most of our systems to NixOS and keep our system setups in a single git repository handled with nixos-rebuild. In this presentation, we explain how and why we do so.</p>
+CLASS:PUBLIC
+CATEGORIES:Nix and NixOS devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-1692-running-nlnet-on-nixos/
+LOCATION:H.1302 (Depage)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Jos van den Oever":https://fosdem.org/2024/schedule/speaker/jos_van_den_oever/
+END:VEVENT
+BEGIN:VEVENT
+UID:2606@2024@be.digitalia.fosdem
+DTSTAMP:20240202T161148Z
+DTSTART:20240204T104000Z
+DTEND:20240204T111000Z
+SUMMARY:Can the mold linker be /usr/bin/ld?
+DESCRIPTION:mold is an open-source, fast, and portable linker for ELF. I'm the creator of the mold linker as well as the LLVM lld linker. It looks like mold is rapidly gaining importance among the GNU toolchain users because it's the only modern linker that supports all GCC features. In contrast, GNU ld is too slow for large projects, GNU gold lacks adequate maintenance, and LLVM lld does not support GCC LTO.
+ If mold is better than GNU ld, why can't we use it as /usr/bin/ld? In most instance, we actually can, except one major use case: kernel/embedded programming.
+ In this talk, I'll discuss the current status of the project, how we achieved the speed and while porting it to 15+ targets in just a few years, and our plans for supporting kernel/embedded programming.
+X-ALT-DESC:<p><a href="https://github.com/rui314/mold">mold</a> is an open-source, fast, and portable linker for ELF. I'm the creator of the mold linker as well as the LLVM lld linker. It looks like mold is rapidly gaining importance among the GNU toolchain users because it's the only modern linker that supports all GCC features. In contrast, GNU ld is too slow for large projects, GNU gold lacks adequate maintenance, and LLVM lld does not support GCC LTO.</p>
+ <p>If mold is better than GNU ld, why can't we use it as /usr/bin/ld? In most instance, we actually can, except one major use case: kernel/embedded programming.</p>
+ <p>In this talk, I'll discuss the current status of the project, how we achieved the speed and while porting it to 15+ targets in just a few years, and our plans for supporting kernel/embedded programming.</p>
+CLASS:PUBLIC
+CATEGORIES:GCC devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2606-can-the-mold-linker-be-usr-bin-ld-/
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Rui Ueyama":https://fosdem.org/2024/schedule/speaker/rui_ueyama/
+END:VEVENT
+BEGIN:VEVENT
+UID:2340@2024@be.digitalia.fosdem
+DTSTAMP:20240202T161148Z
+DTSTART:20240204T122000Z
+DTEND:20240204T124000Z
+SUMMARY:Linker Scripts in LLD and how they compare with GNU ld
+DESCRIPTION:LLD supports linker scripts using the GNU ld manual as a de-facto specification. While the information in the manual is necessary, it isn't sufficient as parts are explicitly "implementation defined" and others are underspecified. While many linker scripts will be interpreted the same way in LLD and GNU ld the differences can catch people out. This can extend to the "default" linker script case, which is not handled in the same way by LLD.
+ The talk will cover: * Basics of linker script notation and what they are used for. * The LLD and GNU ld "default" linker script. * How LLD and GNU ld handle parts of the specification that are "implementation defined". * Other known differences between LLD and GNU ld.
+ The talk will be most useful to developers needing to write a linker script, or are interested in how they are implemented.
+X-ALT-DESC:<p>LLD supports linker scripts using the GNU ld manual as a de-facto specification. While the information in the manual is necessary, it isn't sufficient as parts are explicitly "implementation defined" and others are underspecified. While many linker scripts will be interpreted the same way in LLD and GNU ld the differences can catch people out. This can extend to the "default" linker script case, which is not handled in the same way by LLD.</p>
+ <p>The talk will cover:
+ * Basics of linker script notation and what they are used for.
+ * The LLD and GNU ld "default" linker script.
+ * How LLD and GNU ld handle parts of the specification that are "implementation defined".
+ * Other known differences between LLD and GNU ld.</p>
+ <p>The talk will be most useful to developers needing to write a linker script, or are interested in how they are implemented.</p>
+CLASS:PUBLIC
+CATEGORIES:LLVM devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2340-linker-scripts-in-lld-and-how-they-compare-with-gnu-ld/
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Peter Smith":https://fosdem.org/2024/schedule/speaker/peter_smith/
+END:VEVENT
+BEGIN:VEVENT
+UID:3177@2024@be.digitalia.fosdem
+DTSTAMP:20240202T161148Z
+DTSTART:20240204T130500Z
+DTEND:20240204T133000Z
+SUMMARY:Delegated compositing utilizing Wayland protocols for Chromium on ChromeOS
+DESCRIPTION:This talk will cover our experience in utilizing Wayland subsurfaces and implementing delegated compositing for Chromium on ChromeOS. Several concepts will be covered - from overlay making decision in Chromium/Viz to design and implementation of custom Wayland protocols, which were required to pass frame data as overlays via Wayland and reconstruct that frame on the Wayland server side.
+X-ALT-DESC:<p>This talk will cover our experience in utilizing <a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/ozone/platform/wayland/?q=ui%2Fozone%2Fplatform%2Fwayland&amp;ss=chromium">Wayland</a> subsurfaces and implementing delegated compositing for <a href="https://www.chromium.org/Home/">Chromium</a> on <a href="https://www.chromium.org/chromium-os/">ChromeOS</a>. Several concepts will be covered - from overlay making decision in <a href="https://source.chromium.org/chromium/chromium/src/+/main:components/viz/?q=components%2Fviz">Chromium/Viz</a> to design and implementation of custom Wayland protocols, which were required to pass frame data as overlays via Wayland and reconstruct that frame on the <a href="https://source.chromium.org/chromium/chromium/src/+/main:components/exo/?q=components%2Fexo">Wayland server side</a>.</p>
+CLASS:PUBLIC
+CATEGORIES:Graphics devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3177-delegated-compositing-utilizing-wayland-protocols-for-chromium-on-chromeos/
+LOCATION:K.3.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Maksim Sisov":https://fosdem.org/2024/schedule/speaker/maksim_sisov/
+END:VEVENT
+BEGIN:VEVENT
+UID:3219@2024@be.digitalia.fosdem
+DTSTAMP:20240202T161148Z
+DTSTART:20240204T133500Z
+DTEND:20240204T140000Z
+SUMMARY:Greenfield: Wayland in the browser, an update
+DESCRIPTION:Greenfield is the Wayland compositor for the web. It allows you to access native Linux applications remotely and run WebAssembly applications directly in your browser.
+ In this talk we'll explore how Wayland is used as a remote protocol with performance fit for gaming, as well as how you can compile Wayland applications and run them directly in the browser.
+ We'll finish by looking at the future and what other exciting opportunities await.
+X-ALT-DESC:<p>Greenfield is the Wayland compositor for the web. It allows you to access native Linux applications remotely and run WebAssembly applications directly in your browser.</p>
+ <p>In this talk we'll explore how Wayland is used as a remote protocol with performance fit for gaming, as well as how you can compile Wayland applications and run them directly in the browser.</p>
+ <p>We'll finish by looking at the future and what other exciting opportunities await.</p>
+CLASS:PUBLIC
+CATEGORIES:Graphics devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3219-greenfield-wayland-in-the-browser-an-update/
+LOCATION:K.3.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Erik De Rijcke":https://fosdem.org/2024/schedule/speaker/erik_de_rijcke/
+END:VEVENT
+BEGIN:VEVENT
+UID:3423@2024@be.digitalia.fosdem
+DTSTAMP:20240202T161148Z
+DTSTART:20240204T140000Z
+DTEND:20240204T145000Z
+SUMMARY:Version control post-Git
+DESCRIPTION:Since Darcs, Git and Mercurial were published 15 years ago as the first generation of distributed version control systems, distributed computing has seen exciting progress, in particular with mathematical formalisations of "ideal" distributed datastructures (CRDTs for example).
+ In this talk, I'll show our work on Pijul, a version control system with sound mathematical properties, making it easy and intuitive to use for non-coders, as well as scalable to arbitrarily large monorepos and binary files.
+ I'll explain how the core datastructures were "found" rather than designed, why we had to write a new open source key-value store to fork tables efficiently (zero-copy forks), and how that key-value store ended up breaking all known performance records.
+X-ALT-DESC:<p>Since Darcs, Git and Mercurial were published 15 years ago as the first generation of distributed version control systems, distributed computing has seen exciting progress, in particular with mathematical formalisations of "ideal" distributed datastructures (CRDTs for example).</p>
+ <p>In this talk, I'll show our work on Pijul, a version control system with sound mathematical properties, making it easy and intuitive to use for non-coders, as well as scalable to arbitrarily large monorepos and binary files.</p>
+ <p>I'll explain how the core datastructures were "found" rather than designed, why we had to write a new open source key-value store to fork tables efficiently (zero-copy forks), and how that key-value store ended up breaking all known performance records.</p>
+CLASS:PUBLIC
+CATEGORIES:Main Track - K Building
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3423-version-control-post-git/
+LOCATION:K.1.105 (La Fontaine)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Pierre-Étienne Meunier":https://fosdem.org/2024/schedule/speaker/pierre_etienne_meunier/
+END:VEVENT
+BEGIN:VEVENT
+UID:2876@2024@be.digitalia.fosdem
+DTSTAMP:20240202T161148Z
+DTSTART:20240204T144500Z
+DTEND:20240204T153000Z
+SUMMARY:MatrixRTC: The Future of Matrix Calls
+DESCRIPTION:A generic Real Time (RTC) layer for the matrix ecosystem and client implementations
+ As of now matrix is mostly used as a distributed database powering an instant messaging system. But matrix events which get stored on the homeserver are not suitable for actual real time applications. In this talk we give a brief description of our vision for MatrixRTC which would pave the way for RTC applications such as group calls in your matrix client, a whole collaborative office suite, security/webcam feeds, games, etc. 
+ To realize this vision matrix needs a standardized signaling system for establishing real time (WebRTC) connections between all participants and allow to exchange media and data streams. 
+ In this talk we will present the journey of building Element Call and FluffyChat as MatrixRTC applications for group calls and present the findings we made to make this a stable extensible and secure infrastructure that leverages all the amazing features of matrix.
+ We will give a technical introduction to the MSC's making up MatrixRTC and explain the decisions made. We will also explain how we implemented it in FluffyChat and how it integrates with native mobile operating systems like Android and iOS.
+ Interoperability between Element Call and FluffyChat for group calls just became possible a couple of days ago. We want to share this milestone for this new part of matrix. Since its all built ontop of matix the matrix-calls feature account verification and per sender encryption to not only guarantee that the streams are shared securely but also the authenticity of participants. Which makes it one of the most secure digital real time communication method.
+X-ALT-DESC:<p><em>A generic Real Time (RTC) layer for the matrix ecosystem and client implementations</em></p>
+ <p>As of now matrix is mostly used as a distributed database powering an instant messaging system. But matrix events which get stored on the homeserver are not suitable for actual real time applications. In this talk we give a brief description of our vision for MatrixRTC which would pave the way for RTC applications such as group calls in your matrix client, a whole collaborative office suite, security/webcam feeds, games, etc. </p>
+ <p>To realize this vision matrix needs a standardized signaling system for establishing real time (WebRTC) connections between all participants and allow to exchange media and data streams. </p>
+ <p>In this talk we will present the journey of building <a href="https://github.com/vector-im/element-call">Element Call</a> and <a href="https://github.com/krille-chan/fluffychat">FluffyChat</a> as MatrixRTC applications for group calls and present the findings we made to make this a stable extensible and secure infrastructure that leverages all the amazing features of matrix.</p>
+ <p>We will give a technical introduction to the MSC's making up MatrixRTC and explain the decisions made. We will also explain how we implemented it in FluffyChat and how it integrates with native mobile operating systems like Android and iOS.</p>
+ <p>Interoperability between <a href="https://github.com/vector-im/element-call">Element Call</a> and <a href="https://github.com/krille-chan/fluffychat">FluffyChat</a> for group calls just became possible a couple of days ago. We want to share this milestone for this new part of matrix. 
+ Since its all built ontop of matix the matrix-calls feature account verification and per sender encryption to not only guarantee that the streams are shared securely but also the authenticity of participants. Which makes it one of the most secure digital real time communication method.</p>
+CLASS:PUBLIC
+CATEGORIES:Matrix devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2876-matrixrtc-the-future-of-matrix-calls/
+LOCATION:H.1309 (Van Rijn)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Jayesh Nirve (td)":https://fosdem.org/2024/schedule/speaker/jayesh_nirve_td/
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Timo Kandra":https://fosdem.org/2024/schedule/speaker/timo_kandra/
+END:VEVENT
+END:VCALENDAR

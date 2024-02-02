@@ -1,0 +1,409 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//be.digitalia.fosdem//NONSGML 2.1.3//EN
+BEGIN:VEVENT
+UID:2682@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240203T093000Z
+DTEND:20240203T101000Z
+SUMMARY:SemVer in the Rust ecosystem: breakage, tooling, and edge cases
+DESCRIPTION:In theory, semantic versioning (SemVer) is simple: breaking changes require major versions. SemVer rules do not change over time. Crates always adhere to SemVer. Careful coding is enough to avoid accidental breaking changes.
+ None of those statements are true!
+ In practice, SemVer is complex and accidental breakage is common: 1 in 6 of the top 1000 Rust crates has violated semantic versioning at least once, frustrating both users and maintainers alike.
+ If you write Rust but don't have the time for a PhD in SemVer, this talk is for you. We'll take a practical look at SemVer in Rust: what it buys us, how Rust's features lead to strange SemVer edge cases, and how we can prevent accidental breakage using a SemVer linter called cargo-semver-checks.
+X-ALT-DESC:<p>In theory, semantic versioning (SemVer) is simple: breaking changes require major versions. SemVer rules do not change over time. Crates always adhere to SemVer. Careful coding is enough to avoid accidental breaking changes.</p>
+ <p>None of those statements are true!</p>
+ <p>In practice, SemVer is complex and accidental breakage is common: 1 in 6 of the top 1000 Rust crates has violated semantic versioning at least once, frustrating both users and maintainers alike.</p>
+ <p>If you write Rust but don't have the time for a PhD in SemVer, this talk is for you. We'll take a practical look at SemVer in Rust: what it buys us, how Rust's features lead to strange SemVer edge cases, and how we can prevent accidental breakage using a SemVer linter called <a href="https://crates.io/crates/cargo-semver-checks">cargo-semver-checks</a>.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2682-semver-in-the-rust-ecosystem-breakage-tooling-and-edge-cases/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Predrag Gruevski":https://fosdem.org/2024/schedule/speaker/predrag_gruevski/
+END:VEVENT
+BEGIN:VEVENT
+UID:1638@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240203T101500Z
+DTEND:20240203T103500Z
+SUMMARY:Writing your own Rust linter
+DESCRIPTION:This talk will show you how to write your own rust linter using the rustc_tools crate which allows you to have access to the rust compiler API. It can be quite useful if you need specific lints for a project and cannot add them to clippy.
+ It will explain how the compiler API works and give a small example at the end showing it in action.
+X-ALT-DESC:<p>This talk will show you how to write your own rust linter using the <code>rustc_tools</code> crate which allows you to have access to the rust compiler API. It can be quite useful if you need specific lints for a project and cannot add them to clippy.</p>
+ <p>It will explain how the compiler API works and give a small example at the end showing it in action.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-1638-writing-your-own-rust-linter/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Guillaume Gomez":https://fosdem.org/2024/schedule/speaker/guillaume_gomez/
+END:VEVENT
+BEGIN:VEVENT
+UID:2207@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240203T104000Z
+DTEND:20240203T112000Z
+SUMMARY:The plan for gccrs
+DESCRIPTION:gccrs is an alternative implementation of a Rust compiler currently being developed. It aims to become a fully fledged Rust compiler, and hopes to share as much code as possible with the official Rust compiler in order to guarantee correctness and avoid damage on the Rust ecosystem. But how do we plan to integrate Rust components to the GCC codebase, and what sort of components will we reuse? This talk will explore the future of the project, as well as some of the challenges surrounding compilers, and the very silly sounding but real problems of bootstrapping and dogfooding. We will explore the stack of rustc crates that we leverage, how we use them together, and how they will play a part once the compiler has advanced further.
+X-ALT-DESC:<p><code>gccrs</code> is an alternative implementation of a Rust compiler currently being developed. It
+ aims to become a fully fledged Rust compiler, and hopes to share as much code as possible
+ with the official Rust compiler in order to guarantee correctness and avoid damage on the Rust
+ ecosystem. But how do we plan to integrate Rust components to the GCC codebase, and what sort
+ of components will we reuse? This talk will explore the future of the project, as well as some
+ of the challenges surrounding compilers, and the  very silly sounding but real problems of
+ bootstrapping and dogfooding. We will explore the stack of <code>rustc</code> crates that we leverage,
+ how we use them together, and how they will play a part once the compiler has advanced further.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2207-the-plan-for-gccrs/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Arthur Cohen":https://fosdem.org/2024/schedule/speaker/arthur_cohen/
+END:VEVENT
+BEGIN:VEVENT
+UID:2571@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240203T115500Z
+DTEND:20240203T123500Z
+SUMMARY:Proving Performance
+DESCRIPTION:Software engineers choose Rust for its safety and performance baseline. Wizards use Rust's dark arts to improve performance by chanting cursed unsafe-yet-sound expressions. Whether you’re an engineer or a wizard, this talk will give you the tools and best practices to correctly measure and explore Rust’s performance claims against your projects. And wizards will learn when the performance benefits are worth risking nasal demons with unsafe code.
+X-ALT-DESC:<p>Software engineers choose Rust for its safety and performance baseline. Wizards use Rust's dark arts to improve performance by chanting cursed <code>unsafe</code>-yet-sound expressions. Whether you’re an engineer or a wizard, this talk will give you the tools and best practices to correctly measure and explore Rust’s performance claims against your projects. And wizards will learn when the performance benefits are worth risking nasal demons with <code>unsafe</code> code.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2571-proving-performance/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Nikolai Vazquez":https://fosdem.org/2024/schedule/speaker/nikolai_vazquez/
+END:VEVENT
+BEGIN:VEVENT
+UID:2163@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240203T125000Z
+DTEND:20240203T132500Z
+SUMMARY:Evolving your APIs, a step-by-step approach
+DESCRIPTION:When you publish your first HTTP API, you’re more focused on short-term issues than planning for the future. However, chances are you’ll be successful, and you’ll “hit the wall”. How do you evolve your API without breaking the contract with your existing users?
+ In this talk, I’ll first show you some tips and tricks to achieve that: moving your endpoints, deprecating them, monitoring who’s using them, and letting users know about the new endpoints. The talk is demo-based, and I’ll use the Apache APISIX project for it.
+X-ALT-DESC:<p>When you publish your first HTTP API, you’re more focused on short-term issues than planning for the future. However, chances are you’ll be successful, and you’ll “hit the wall”. How do you evolve your API without breaking the contract with your existing users?</p>
+ <p>In this talk, I’ll first show you some tips and tricks to achieve that: moving your endpoints, deprecating them, monitoring who’s using them, and letting users know about the new endpoints. The talk is demo-based, and I’ll use the Apache APISIX project for it.</p>
+CLASS:PUBLIC
+CATEGORIES:APIs & friends devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2163-evolving-your-apis-a-step-by-step-approach/
+LOCATION:AW1.126
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Nicolas Fränkel":https://fosdem.org/2024/schedule/speaker/nicolas_frankel/
+END:VEVENT
+BEGIN:VEVENT
+UID:2434@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240203T130500Z
+DTEND:20240203T134500Z
+SUMMARY:The Four Horsemen of Bad Rust Code
+DESCRIPTION:In the right hands, Rust is an exceptionally powerful language. Yet, I frequently observe similar mistakes in Rust programming: treating it like C or Java and not fully utilizing its unique features. I've concluded that poor Rust coding often falls into a few distinct categories, which I've termed the '4 Horsemen of Bad Rust Code': Overengineering, Simplistic Design, Premature Optimization, and Neglect of Documentation and Testing. This talk will delve into these antipatterns and offer strategies to avoid them, aiming to share practical tips for writing more ergonomic and effective Rust code. During the talk, we will gradually refactor a Rust code example, transforming it from a less optimal version to a more idiomatic and efficient one.
+X-ALT-DESC:<p>In the right hands, Rust is an exceptionally powerful language. Yet, I frequently observe similar mistakes in Rust programming: treating it like C or Java and not fully utilizing its unique features. I've concluded that poor Rust coding often falls into a few distinct categories, which I've termed the '4 Horsemen of Bad Rust Code': Overengineering, Simplistic Design, Premature Optimization, and Neglect of Documentation and Testing. This talk will delve into these antipatterns and offer strategies to avoid them, aiming to share practical tips for writing more ergonomic and effective Rust code.
+ During the talk, we will gradually refactor a Rust code example, transforming it from a less optimal version to a more idiomatic and efficient one.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2434-the-four-horsemen-of-bad-rust-code/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Matthias Endler":https://fosdem.org/2024/schedule/speaker/matthias_endler/
+END:VEVENT
+BEGIN:VEVENT
+UID:2044@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240203T131000Z
+DTEND:20240203T133000Z
+SUMMARY:Type-safe Queries with Gleam & GraphQL
+DESCRIPTION:Building a type-safe GraphQL server in Gleam, how it works and why gleam is the best option!
+X-ALT-DESC:<p>Building a type-safe GraphQL server in Gleam, how it works and why gleam is the best option!</p>
+CLASS:PUBLIC
+CATEGORIES:Erlang, Elixir, Gleam and Friends devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2044-type-safe-queries-with-gleam-graphql/
+LOCATION:K.4.601
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Harry Bairstow":https://fosdem.org/2024/schedule/speaker/harry_bairstow/
+END:VEVENT
+BEGIN:VEVENT
+UID:1725@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240203T150000Z
+DTEND:20240203T152500Z
+SUMMARY:Zephyr and RISC-V: I Ain't Afraid Of No Ghosts
+DESCRIPTION:RISC-V's instruction set architecture (ISA) has enabled seasoned embedded software engineers to experiment with FPGAs since numerous open-source RISC-V cores can be flashed onto an FPGA. The Zephyr Project is rapidly emerging as a leading real-time operating system (RTOS). Zephyr integrates open-source and security best practices to ensure a vendor-neutral, secure, and reliable platform.
+ In this talk, Mohammed Billoo will describe the process of getting to Zephyr to run on the UPduino (https://tinyvision.ai/pages/the-upduino), flashed with the neorv32 RISC-V processor (https://github.com/stnolting/neorv32). He will walk through building and flashing the neorv32 RISC-V core on the FPGA, creating a Zephyr application that can output Hello World to the UART, and loading the application to the FPGA. Mohammed will also walk through the necessary Zephyr drivers to get the application running. This talk will demonstrate how combining RISC-V and Zephyr on an FPGA opens up new opportunities for embedded software applications. Using open-source software and firmware on a low-cost FPGA reduces the bar for entry for enthusiasts and hobbyists. The audience will learn the following in this talk:
+ Relevance of the RISC-V instruction set architecture for hobbyists
+ Overview and structure of the neorv32 RISC-V processor
+ Overview and structure of The Zephyr Project RTOS
+ RISC-V support in Zephyr
+ Relevant Zephyr drivers
+ Demo: From Empty Silicon To Zephyr Boot
+X-ALT-DESC:<p>RISC-V's instruction set architecture (ISA) has enabled seasoned embedded software engineers to experiment with FPGAs since numerous open-source RISC-V cores can be flashed onto an FPGA. The Zephyr Project is rapidly emerging as a leading real-time operating system (RTOS).  Zephyr integrates open-source and security best practices to ensure a vendor-neutral, secure, and reliable platform.</p>
+ <p>In this talk, Mohammed Billoo will describe the process of getting to Zephyr to run on the UPduino (https://tinyvision.ai/pages/the-upduino), flashed with the neorv32 RISC-V processor (https://github.com/stnolting/neorv32). He will walk through building and flashing the neorv32 RISC-V core on the FPGA, creating a Zephyr application that can output Hello World to the UART, and loading the application to the FPGA. Mohammed will also walk through the necessary Zephyr drivers to get the application running.
+ This talk will demonstrate how combining RISC-V and Zephyr on an FPGA opens up new opportunities for embedded software applications. Using open-source software and firmware on a low-cost FPGA reduces the bar for entry for enthusiasts and hobbyists. The audience will learn the following in this talk:</p>
+ <ul>
+ <li>Relevance of the RISC-V instruction set architecture for hobbyists</li>
+ <li>Overview and structure of the neorv32 RISC-V processor</li>
+ <li>Overview and structure of The Zephyr Project RTOS</li>
+ <li>RISC-V support in Zephyr</li>
+ <li>Relevant Zephyr drivers</li>
+ <li>Demo: From Empty Silicon To Zephyr Boot</li>
+ </ul>
+CLASS:PUBLIC
+CATEGORIES:Embedded, Mobile and Automotive devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-1725-zephyr-and-risc-v-i-ain-t-afraid-of-no-ghosts/
+LOCATION:UD2.120 (Chavanne)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Mohammed Billoo":https://fosdem.org/2024/schedule/speaker/mohammed_billoo/
+END:VEVENT
+BEGIN:VEVENT
+UID:2853@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240203T170000Z
+DTEND:20240203T173000Z
+SUMMARY:Domain:  A modular Rust DNS toolkit
+DESCRIPTION:The "domain" crate is a Rust library that aims to provide a wide range of building blocks that are necessary or useful when building specialised DNS applications.
+ In this talk we will look at the history, current state, and future of the crate and how it differs from other offerings in the Rust ecosystem. We will explore how the crate aims to leverage Rust’s type system to make it easier to model the complexities of the DNS in a straightforward way that helps make it easier to build correct and efficient applications.
+X-ALT-DESC:<p>The "domain" crate is a Rust library that aims to provide a wide range
+ of building blocks that are necessary or useful when building specialised
+ DNS applications.</p>
+ <p>In this talk we will look at the history, current state, and future of the
+ crate and how it differs from other offerings in the Rust ecosystem. We will
+ explore how the crate aims to leverage Rust’s type system to make it easier
+ to model the complexities of the DNS in a straightforward way that helps
+ make it easier to build correct and efficient applications.</p>
+CLASS:PUBLIC
+CATEGORIES:DNS devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2853-domain-a-modular-rust-dns-toolkit/
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Martin Hoffmann":https://fosdem.org/2024/schedule/speaker/martin_hoffmann/
+END:VEVENT
+BEGIN:VEVENT
+UID:3598@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240204T080000Z
+DTEND:20240204T085000Z
+SUMMARY:Beyond Joins and Indexes
+DESCRIPTION:My presentation Explaining the Postgres Query Optimizer covers the details of query optimization, optimizer statistics, joins, and indexes. This talk covers 42 other operations the optimizer can choose to handle complex queries, large data sets, and to enhance performance. These include merge append, gather, memoize, and hash aggregate. It explains their purpose and shows queries that can generate these operations.
+X-ALT-DESC:<p>My presentation Explaining the Postgres Query Optimizer covers the details of query optimization, optimizer statistics, joins, and indexes. This talk covers 42 other operations the optimizer can choose to handle complex queries, large data sets, and to enhance performance. These include merge append, gather, memoize, and hash aggregate. It explains their purpose and shows queries that can generate these operations.</p>
+CLASS:PUBLIC
+CATEGORIES:PostgreSQL devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3598-beyond-joins-and-indexes/
+LOCATION:UD2.120 (Chavanne)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Bruce Momjian":https://fosdem.org/2024/schedule/speaker/bruce_momjian/
+END:VEVENT
+BEGIN:VEVENT
+UID:3575@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240204T090000Z
+DTEND:20240204T092500Z
+SUMMARY:RISC-V Vector Assembly in dav1d
+DESCRIPTION:RISC-V is an emerging ISA that is rapidly moving from embedded to application processors. The V extension allows for data parallelism through scalable vectors and is currently the only way achieve SIMD speed-ups on RISC-V. This talk will cover recent work adding RISC-V optimizations to the dav1d AV1 decoder project, including details on how to write DSP algorithms in a way that take advantage of both the variable length register and loop unrolling features inherent in RVV. These general approaches should be applicable to other media formats and source code from dav1d can be lifted as-is to jump start RISC-V development in other projects.
+X-ALT-DESC:<p>RISC-V is an emerging ISA that is rapidly moving from embedded to application processors. The V extension allows for data parallelism through scalable vectors and is currently the only way achieve SIMD speed-ups on RISC-V. This talk will cover recent work adding RISC-V optimizations to the dav1d AV1 decoder project, including details on how to write DSP algorithms in a way that take advantage of both the variable length register and loop unrolling features inherent in RVV. These general approaches should be applicable to other media formats and source code from dav1d can be lifted as-is to jump start RISC-V development in other projects.</p>
+CLASS:PUBLIC
+CATEGORIES:Open Media devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3575-risc-v-vector-assembly-in-dav1d/
+LOCATION:UB4.132
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Nathan Egge":https://fosdem.org/2024/schedule/speaker/nathan_egge/
+END:VEVENT
+BEGIN:VEVENT
+UID:2135@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240204T092500Z
+DTEND:20240204T094500Z
+SUMMARY:[JMAP] JMAP: Getting Started
+DESCRIPTION:JMAP (RFC 8620, 8261, &c.) is a new protocol meant to replace IMAP, CalDAV, CardDAV, and to handle more kinds of data in the future. It keeps the most important technical properties of those protocols, but ditches many things that hold back improvements and hamper developers. It's built on commonly understood and implemented standards, which makes it easy to get up and running and easy to benefit from modern systems like push notifications. It's built as a syncing protocol, providing easy sync features in a data agnostic way.
+ JMAP is still young, but there are multiple implementations of both client and server. The most notable install of JMAP is at Fastmail, where it's the primary interface to all customer data.
+ This talk will cover what JMAP looks like, the principles under which it operates, and how to get started working with it. We will discuss the likely next steps in JMAP's rollout and how Fastmail uses JMAP internally for its own datatypes.
+X-ALT-DESC:<p>JMAP (RFC 8620, 8261, &amp;c.) is a new protocol meant to replace IMAP, CalDAV, CardDAV, and to handle more kinds of data in the future.  It keeps the most important technical properties of those protocols, but ditches many things that hold back improvements and hamper developers.  It's built on commonly understood and implemented standards, which makes it easy to get up and running and easy to benefit from modern systems like push notifications.  It's built as a syncing protocol, providing easy sync features in a data agnostic way.</p>
+ <p>JMAP is still young, but there are multiple implementations of both client and server.  The most notable install of JMAP is at Fastmail, where it's the primary interface to all customer data.</p>
+ <p>This talk will cover what JMAP looks like, the principles under which it operates, and how to get started working with it.  We will discuss the likely next steps in JMAP's rollout and how Fastmail uses JMAP internally for its own datatypes.</p>
+CLASS:PUBLIC
+CATEGORIES:Modern Email devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2135--jmap-jmap-getting-started/
+LOCATION:H.2213
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Ricardo Signes":https://fosdem.org/2024/schedule/speaker/ricardo_signes/
+END:VEVENT
+BEGIN:VEVENT
+UID:2261@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240204T111500Z
+DTEND:20240204T113500Z
+SUMMARY:[Servers] Mox: a modern full-featured mail server
+DESCRIPTION:Mox is a relatively new full-featured email server, with a focus on security and ease of use. The goal is to make it easy to run your own modern mail server, so you can stay in charge of your email and keep email decentralized! Mox handles SMTP including SPF/DKIM/DMARC/DANE/MTA-STS, IMAP4, ACME (TLS), junk filtering, webmail, Internationalization, autoconfig and more! All in a lean, consistent, tested code base, cross-referenced with RFCs. We'll look into how mox achieves its goals, have a quick demo, and dive into a few topics of modern email and software development, and look at the roadmap.
+X-ALT-DESC:<p><a href="https://www.xmox.nl">Mox</a> is a relatively new full-featured email server, with a focus on security and ease of use. The goal is to make it easy to run your own modern mail server, so you can stay in charge of your email and keep email decentralized! Mox handles SMTP including SPF/DKIM/DMARC/DANE/MTA-STS, IMAP4, ACME (TLS), junk filtering, webmail, Internationalization, autoconfig and more! All in a lean, consistent, tested code base, cross-referenced with RFCs. We'll look into how mox achieves its goals, have a quick demo, and dive into a few topics of modern email and software development, and look at the roadmap.</p>
+CLASS:PUBLIC
+CATEGORIES:Modern Email devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2261--servers-mox-a-modern-full-featured-mail-server/
+LOCATION:H.2213
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Mechiel Lukkien":https://fosdem.org/2024/schedule/speaker/mechiel_lukkien/
+END:VEVENT
+BEGIN:VEVENT
+UID:2340@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240204T122000Z
+DTEND:20240204T124000Z
+SUMMARY:Linker Scripts in LLD and how they compare with GNU ld
+DESCRIPTION:LLD supports linker scripts using the GNU ld manual as a de-facto specification. While the information in the manual is necessary, it isn't sufficient as parts are explicitly "implementation defined" and others are underspecified. While many linker scripts will be interpreted the same way in LLD and GNU ld the differences can catch people out. This can extend to the "default" linker script case, which is not handled in the same way by LLD.
+ The talk will cover: * Basics of linker script notation and what they are used for. * The LLD and GNU ld "default" linker script. * How LLD and GNU ld handle parts of the specification that are "implementation defined". * Other known differences between LLD and GNU ld.
+ The talk will be most useful to developers needing to write a linker script, or are interested in how they are implemented.
+X-ALT-DESC:<p>LLD supports linker scripts using the GNU ld manual as a de-facto specification. While the information in the manual is necessary, it isn't sufficient as parts are explicitly "implementation defined" and others are underspecified. While many linker scripts will be interpreted the same way in LLD and GNU ld the differences can catch people out. This can extend to the "default" linker script case, which is not handled in the same way by LLD.</p>
+ <p>The talk will cover:
+ * Basics of linker script notation and what they are used for.
+ * The LLD and GNU ld "default" linker script.
+ * How LLD and GNU ld handle parts of the specification that are "implementation defined".
+ * Other known differences between LLD and GNU ld.</p>
+ <p>The talk will be most useful to developers needing to write a linker script, or are interested in how they are implemented.</p>
+CLASS:PUBLIC
+CATEGORIES:LLVM devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2340-linker-scripts-in-lld-and-how-they-compare-with-gnu-ld/
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Peter Smith":https://fosdem.org/2024/schedule/speaker/peter_smith/
+END:VEVENT
+BEGIN:VEVENT
+UID:2201@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240204T125000Z
+DTEND:20240204T131500Z
+SUMMARY:Training efficient and open source ML models for private translation in Firefox
+DESCRIPTION:Firefox is the only web browser that provides local in-page translation that is private by design. 
+ What does it take to train a high-quality Neural Machine Translation model? How do we compress the models from 800 to 20 MB and make them efficient to perform well on a CPU? What infrastructure and scale does it require to run training for many languages? We will answer all these questions and talk about the unique challenges and the future of the project. 
+ And yes, the good news: code, training data and models are fully open-source!
+X-ALT-DESC:<p>Firefox is the only web browser that provides local in-page translation that is private by design. </p>
+ <p>What does it take to train a high-quality Neural Machine Translation model? How do we compress the models from 800 to 20 MB and make them efficient to perform well on a CPU? What infrastructure and scale does it require to run training for many languages? We will answer all these questions and talk about the unique challenges and the future of the project. </p>
+ <p>And yes, the good news: code, training data and models are fully open-source!</p>
+CLASS:PUBLIC
+CATEGORIES:Mozilla devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2201-training-efficient-and-open-source-ml-models-for-private-translation-in-firefox/
+LOCATION:H.1302 (Depage)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Marco Castelluccio":https://fosdem.org/2024/schedule/speaker/marco_castelluccio/
+END:VEVENT
+BEGIN:VEVENT
+UID:3611@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240204T130000Z
+DTEND:20240204T135000Z
+SUMMARY:So you think you know Git
+DESCRIPTION:Advanced Git Tips and Tricks
+ Git has been the de-facto version control system used by nearly every developer in the world for almost a decade now. While most of us know the basics, there are depths and hidden valleys of our Git tooling that even the most experienced of us may have never even heard of. Join Scott Chacon, a GitHub co-founder and the author of Pro Git, to dig into the hidden depths of obscure command line invocations to get more out of the amazing tool you use every day.
+X-ALT-DESC:<p><em>Advanced Git Tips and Tricks</em></p>
+ <p>Git has been the de-facto version control system used by nearly every developer in the world for almost a decade now. While most of us know the basics, there are depths and hidden valleys of our Git tooling that even the most experienced of us may have never even heard of. Join Scott Chacon, a GitHub co-founder and the author of Pro Git, to dig into the hidden depths of obscure command line invocations to get more out of the amazing tool you use every day.</p>
+CLASS:PUBLIC
+CATEGORIES:Main Track - K Building
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3611-so-you-think-you-know-git/
+LOCATION:K.1.105 (La Fontaine)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Scott Chacon":https://fosdem.org/2024/schedule/speaker/scott_chacon/
+END:VEVENT
+BEGIN:VEVENT
+UID:3154@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240204T130500Z
+DTEND:20240204T132000Z
+SUMMARY:Project websites that don't suck
+DESCRIPTION:Does the homepage of your project website encourage potential users to try it out? Or is it actively repelling people? Even worse, could it be attracting all the wrong people? In this talk, Emily Omier will walk attendees through the basic structure of a good project website homepage, giving examples of projects with solid websites as well as others that could use improvement. Attendees will leave with a concrete roadmap for either creating their project homepage from scratch or improving the homepage they already have. The focus is on the written content of the website, not on the design.
+X-ALT-DESC:<p>Does the homepage of your project website encourage potential users to try it out? Or is it actively repelling people? Even worse, could it be attracting all the wrong people? In this talk, Emily Omier will walk attendees through the basic structure of a good project website homepage, giving examples of projects with solid websites as well as others that could use improvement. Attendees will leave with a concrete roadmap for either creating their project homepage from scratch or improving the homepage they already have. The focus is on the written content of the website, not on the design.</p>
+CLASS:PUBLIC
+CATEGORIES:Lightning talks
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3154-project-websites-that-don-t-suck/
+LOCATION:H.2215 (Ferrer)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Emily Omier":https://fosdem.org/2024/schedule/speaker/emily_omier/
+END:VEVENT
+BEGIN:VEVENT
+UID:2555@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240204T132500Z
+DTEND:20240204T135500Z
+SUMMARY:Building a Linux distro with LLVM
+DESCRIPTION:For the last 3 years, I've been building a complete Linux distribution, Chimera Linux (https://chimera-linux.org) using solely LLVM as its system toolchain - that means Clang, compiler-rt, and libc++, alongside its other tooling. Right now, it is a complete desktop system that is already used by many, with a familiar GNOME interface and thousands of packages, targeting 5 CPU architectures. In this talk I would like to focus on my experiences using the toolchain, what obstacles got in the way, how I dealt with them, the issues that are still left and I would like to see addressed, the many benefits using LLVM gave the project, and overall give the audience an insight into practical deployment of LLVM in a project where it isn't simply a drop-in alternative to GCC.
+X-ALT-DESC:<p>For the last 3 years, I've been building a complete Linux distribution, Chimera Linux (https://chimera-linux.org) using solely LLVM as its system toolchain - that means Clang, compiler-rt, and libc++, alongside its other tooling. Right now, it is a complete desktop system that is already used by many, with a familiar GNOME interface and thousands of packages, targeting 5 CPU architectures. In this talk I would like to focus on my experiences using the toolchain, what obstacles got in the way, how I dealt with them, the issues that are still left and I would like to see addressed, the many benefits using LLVM gave the project, and overall give the audience an insight into practical deployment of LLVM in a project where it isn't simply a drop-in alternative to GCC.</p>
+CLASS:PUBLIC
+CATEGORIES:LLVM devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2555-building-a-linux-distro-with-llvm/
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Daniel Kolesa":https://fosdem.org/2024/schedule/speaker/daniel_kolesa/
+END:VEVENT
+BEGIN:VEVENT
+UID:1873@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240204T135000Z
+DTEND:20240204T141000Z
+SUMMARY:Debugging HTTP/3 upload speed in Firefox
+DESCRIPTION:After fixing HTTP/2 (H2) upload speed bugs in 2023 (Bug 1596576), Mozilla's Networking team started to focus on HTTP/3 (H3) upload speed (Bug 1852924).
+ The H3 upload speed problem is inherently different from the one in H2. H2 benefits from the mature, operating system-level TCP networking stack. H3 on the other hand is build on top of QUIC, which lacks an operating system API. All networking operations have to be handled in user space. This talk is about the journey of discovering and fixing various H3 upload speed bugs in Firefox using Wireshark, logging, i/o-graphs and more.
+X-ALT-DESC:<p>After fixing HTTP/2 (H2) upload speed bugs in 2023 (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1596576">Bug 1596576</a>), <a href="https://wiki.mozilla.org/Networking">Mozilla's Networking team</a> started to focus on HTTP/3 (H3) upload speed (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1852924">Bug 1852924</a>).</p>
+ <p>The H3 upload speed problem is inherently different from the one in H2. H2 benefits from the mature, operating system-level TCP networking stack. H3 on the other hand is build on top of QUIC, which lacks an operating system API. All networking operations have to be handled in user space. This talk is about the journey of discovering and fixing various H3 upload speed bugs in Firefox using Wireshark, logging, i/o-graphs and more.</p>
+CLASS:PUBLIC
+CATEGORIES:Mozilla devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-1873-debugging-http-3-upload-speed-in-firefox/
+LOCATION:H.1302 (Depage)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Manuel Bucher":https://fosdem.org/2024/schedule/speaker/manuel_bucher/
+END:VEVENT
+BEGIN:VEVENT
+UID:3423@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240204T140000Z
+DTEND:20240204T145000Z
+SUMMARY:Version control post-Git
+DESCRIPTION:Since Darcs, Git and Mercurial were published 15 years ago as the first generation of distributed version control systems, distributed computing has seen exciting progress, in particular with mathematical formalisations of "ideal" distributed datastructures (CRDTs for example).
+ In this talk, I'll show our work on Pijul, a version control system with sound mathematical properties, making it easy and intuitive to use for non-coders, as well as scalable to arbitrarily large monorepos and binary files.
+ I'll explain how the core datastructures were "found" rather than designed, why we had to write a new open source key-value store to fork tables efficiently (zero-copy forks), and how that key-value store ended up breaking all known performance records.
+X-ALT-DESC:<p>Since Darcs, Git and Mercurial were published 15 years ago as the first generation of distributed version control systems, distributed computing has seen exciting progress, in particular with mathematical formalisations of "ideal" distributed datastructures (CRDTs for example).</p>
+ <p>In this talk, I'll show our work on Pijul, a version control system with sound mathematical properties, making it easy and intuitive to use for non-coders, as well as scalable to arbitrarily large monorepos and binary files.</p>
+ <p>I'll explain how the core datastructures were "found" rather than designed, why we had to write a new open source key-value store to fork tables efficiently (zero-copy forks), and how that key-value store ended up breaking all known performance records.</p>
+CLASS:PUBLIC
+CATEGORIES:Main Track - K Building
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3423-version-control-post-git/
+LOCATION:K.1.105 (La Fontaine)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Pierre-Étienne Meunier":https://fosdem.org/2024/schedule/speaker/pierre_etienne_meunier/
+END:VEVENT
+BEGIN:VEVENT
+UID:2931@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240204T143000Z
+DTEND:20240204T145500Z
+SUMMARY:Innovations in H.264/AVC software decoding (Architecture and optimization of a block-based video decoder to reach 10% faster speed and 3x code reduction over the state-of-the-art)
+DESCRIPTION:This talk will present architectural and optimization techniques that were used in the development of a H.264 software decoder (https://github.com/tvlabs/edge264), to drastically reduce code size and improve speed. The techniques are applicable to other block-based video codecs, and will be presented as HOWTOs to help participants use them in their own projects. They include (i) code and memory layout with the C language, (ii) maximizing opportunities for vectorization, and (iii) extraction of bit sequences.
+X-ALT-DESC:<p>This talk will present architectural and optimization techniques that were used in the development of a H.264 software decoder (https://github.com/tvlabs/edge264), to drastically reduce code size and improve speed. The techniques are applicable to other block-based video codecs, and will be presented as HOWTOs to help participants use them in their own projects. They include (i) code and memory layout with the C language, (ii) maximizing opportunities for vectorization, and (iii) extraction of bit sequences.</p>
+CLASS:PUBLIC
+CATEGORIES:Open Media devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2931-innovations-in-h-264-avc-software-decoding-architecture-and-optimization-of-a-block-based-video-decoder-to-reach-10-faster-speed-and-3x-code-reduction-over-the-state-of-the-art-/
+LOCATION:UB4.132
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Thibault Raffaillac":https://fosdem.org/2024/schedule/speaker/thibault_raffaillac/
+END:VEVENT
+BEGIN:VEVENT
+UID:3342@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240204T144500Z
+DTEND:20240204T150000Z
+SUMMARY:The wonderful life of a SQL query in a streaming database
+DESCRIPTION:How do you update materialized views incrementally based on streaming data? In this talk, we follow the life of a query, from the SQL string to the running operators, in a distributed system. This talk follows a SQL query as it runs in RisingWave (https://github.com/risingwavelabs/risingwave), a shared storage streaming system that delivers real-time analytics over unbounded data. We’ll give a brief overview of the systems architecture, and show how the compute layer is used during query processing. You will also discover how this open-source database deploys streaming graphs, scales horizontally, and manages data in motion.
+X-ALT-DESC:<p>How do you update materialized views incrementally based on streaming data? In this talk, we follow the life of a query, from the SQL string to the running operators, in a distributed system.
+ This talk follows a SQL query as it runs in RisingWave (https://github.com/risingwavelabs/risingwave), a shared storage streaming system that delivers real-time analytics over unbounded data. We’ll give a brief overview of the systems architecture, and show how the compute layer is used during query processing. You will also discover how this open-source database deploys streaming graphs, scales horizontally, and manages data in motion.</p>
+CLASS:PUBLIC
+CATEGORIES:Lightning talks
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3342-the-wonderful-life-of-a-sql-query-in-a-streaming-database/
+LOCATION:H.2215 (Ferrer)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Jan Mensch":https://fosdem.org/2024/schedule/speaker/jan_mensch/
+END:VEVENT
+BEGIN:VEVENT
+UID:1682@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240204T153500Z
+DTEND:20240204T160000Z
+SUMMARY:Map LLVM values to corresponding source-level expressions
+DESCRIPTION:An interface which takes an LLVM value at any point in the LLVM transformations pipeline and returns a string corresponding to the equivalent source-level expression. We are especially interested in using this interface to map addresses used in load/store instructions to equivalent source-level memory references. The primary objective of this project is to enhance the effectiveness of compiler-generated remarks and analysis reports for code optimization. These messages, while often comprehensive, lack direct connections to the corresponding source-level expressions. The goal is to bridge this gap by utilizing LLVM's intrinsic functions, which establish mappings between LLVM program entities and source-level expressions. The project specifically focuses on utilizing these intrinsic functions to generate or derive source expressions from LLVM values. This functionality is particularly important for enhancing memory access optimizations, including the reporting of memory access dependences that hinder vectorization.
+X-ALT-DESC:<p>An interface which takes an LLVM value at any point in the LLVM transformations pipeline and returns a string corresponding to the equivalent source-level expression. We are especially interested in using this interface to map addresses used in load/store instructions to equivalent source-level memory references.
+ The primary objective of this project is to enhance the effectiveness of compiler-generated remarks and analysis reports for code optimization. These messages, while often comprehensive, lack direct connections to the corresponding source-level expressions. The goal is to bridge this gap by utilizing LLVM's intrinsic functions, which establish mappings between LLVM program entities and source-level expressions. The project specifically focuses on utilizing these intrinsic functions to generate or derive source expressions from LLVM values. This functionality is particularly important for enhancing memory access optimizations, including the reporting of memory access dependences that hinder vectorization.</p>
+CLASS:PUBLIC
+CATEGORIES:LLVM devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-1682-map-llvm-values-to-corresponding-source-level-expressions/
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Shivam Kunwar":https://fosdem.org/2024/schedule/speaker/shivam_kunwar/
+END:VEVENT
+BEGIN:VEVENT
+UID:3650@2024@be.digitalia.fosdem
+DTSTAMP:20240202T144824Z
+DTSTART:20240204T153500Z
+DTEND:20240204T155000Z
+SUMMARY:Working with Large Language Models
+DESCRIPTION:Large Language Models (LLMs) provide a very compelling option when adding new and interesting features to any code base. But there remain plenty of challenges when trying to integrate (unreliable) intelligence in any code base, especially less popular models. In this talk, we’ll highlight what we learned and how we aim to enable open source knowledge sharing surrounding LLMs.
+X-ALT-DESC:<p>Large Language Models (LLMs) provide a very compelling option when adding new and interesting features to any code base. But there remain plenty of challenges when trying to integrate (unreliable) intelligence in any code base, especially less popular models. In this talk, we’ll highlight what we learned and how we aim to enable open source knowledge sharing surrounding LLMs.</p>
+CLASS:PUBLIC
+CATEGORIES:Mozilla devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3650-working-with-large-language-models/
+LOCATION:H.1302 (Depage)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Gabriel":https://fosdem.org/2024/schedule/speaker/gabriel/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <main id="main">
+
+    </main>
+    <style>
+        tr:nth-child(odd) {
+            background: #ddd;
+        }
+
+        td:nth-child(1) {
+            max-width: 30ch;
+        }
+
+        td:nth-child(2),
+        td:nth-child(3),
+        td:nth-child(4),
+        td:nth-child(5),
+        td:nth-child(6),
+        td:nth-child(7) {
+            text-align: center;
+        }
+
+        td, th {
+            padding: 0.5em 1em;
+        }
+    </style>
+    <script type="module">
+        function createDetails(parent, summary) {
+            const details = document.createElement("details");
+            parent.appendChild(details);
+
+            const summaryElement = document.createElement("summary");
+            summaryElement.innerText = summary;
+            details.appendChild(summaryElement);
+
+            return details;
+        }
+
+        let schedule = await fetch("fosdem.json").then(r => r.json());
+        let selection = await fetch("selection.json").then(r => r.json());
+        console.log(schedule)
+
+
+        let main = document.getElementById("main");
+
+        let header1 = document.createElement("h1");
+        main.appendChild(header1);
+        header1.innerText = "Selection"
+
+        let all_events = [];
+        for (const day of schedule) {
+            for (const room of day.rooms) {
+                for (const event of room.events) {
+                    all_events.push(event);
+                }
+            }
+        }
+
+        all_events.sort((a, b) => {
+            if (a.day < b.day) {
+                return -1;
+            }
+            if (b.day < a.day) {
+                return 1;
+            }
+            if (a.start < b.start) {
+                return -1;
+            }
+            if (b.start < a.start) {
+                return 1;
+            }
+            return 0;
+        });
+
+        let table = document.createElement("table");
+        main.appendChild(table);
+
+        let header_row = document.createElement("tr");
+        table.appendChild(header_row);
+
+        for (const a of ["Event", "Day", "Start", "End"]) {
+            let th = document.createElement("th");
+            header_row.appendChild(th);
+            th.innerText = a;
+        }
+
+        for (const name of Object.keys(selection)) {
+            let th = document.createElement("th");
+            header_row.appendChild(th);
+            th.innerText = name;
+        }
+
+        for (const event of all_events) {
+            let contains = Object.values(selection).map(s => s.includes(event.id));
+            if (!contains.some(x => x)) {
+                continue;
+            }
+            let tr = document.createElement("tr");
+            table.appendChild(tr);
+
+            let name = document.createElement("td");
+            tr.appendChild(name);
+            name.innerText = event.title;
+            
+            let day = document.createElement("td");
+            tr.appendChild(day);
+            day.innerText = event.day;
+            
+            let start = document.createElement("td");
+            tr.appendChild(start);
+            start.innerText = event.start;
+            
+            let end = document.createElement("td");
+            tr.appendChild(end);
+            end.innerText = event.end;
+
+            for (const c of contains) {
+                let td = document.createElement("td");
+                tr.appendChild(td);
+                if (c) {
+                    td.innerText = "X"
+                }
+            }
+        }
+
+        let header2 = document.createElement("h1");
+        header2.innerText = "Full Schedule"
+        main.appendChild(header2);
+
+        let i = 1;
+        for (const day of schedule) {
+            let dayEl = createDetails(main, `Day ${i}`)
+            i += 1;
+            console.log(day);
+            for (const room of day.rooms) {
+                let roomEl = createDetails(dayEl, `Room: ${room.name}`);
+
+                for (const event of room.events) {
+                    let div = document.createElement("div");
+                    roomEl.appendChild(div);
+
+                    let a = document.createElement("a");
+                    div.appendChild(a);
+                    a.innerText = event.title;
+                    a.setAttribute("href", event.url);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//be.digitalia.fosdem//NONSGML 2.2.1//EN
+BEGIN:VEVENT
+UID:2571@2024@be.digitalia.fosdem
+DTSTAMP:20240202T152338Z
+DTSTART:20240203T115500Z
+DTEND:20240203T123500Z
+SUMMARY:Proving Performance
+DESCRIPTION:Software engineers choose Rust for its safety and performance baseline. Wizards use Rust's dark arts to improve performance by chanting cursed unsafe-yet-sound expressions. Whether you’re an engineer or a wizard, this talk will give you the tools and best practices to correctly measure and explore Rust’s performance claims against your projects. And wizards will learn when the performance benefits are worth risking nasal demons with unsafe code.
+X-ALT-DESC:<p>Software engineers choose Rust for its safety and performance baseline. Wizards use Rust's dark arts to improve performance by chanting cursed <code>unsafe</code>-yet-sound expressions. Whether you’re an engineer or a wizard, this talk will give you the tools and best practices to correctly measure and explore Rust’s performance claims against your projects. And wizards will learn when the performance benefits are worth risking nasal demons with <code>unsafe</code> code.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2571-proving-performance/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Nikolai Vazquez":https://fosdem.org/2024/schedule/speaker/nikolai_vazquez/
+END:VEVENT
+BEGIN:VEVENT
+UID:1934@2024@be.digitalia.fosdem
+DTSTAMP:20240202T152338Z
+DTSTART:20240203T135000Z
+DTEND:20240203T143000Z
+SUMMARY:Introducing Ratatui: A Rust library to cook up terminal user interfaces
+DESCRIPTION:Have you ever wondered how terminal user interface applications are built? Join me in this talk as we explore Ratatui which aims to provide a wide range of widgets to make it possible to design beautiful interfaces and push the limits of the terminal using Rust.
+X-ALT-DESC:<p>Have you ever wondered how terminal user interface applications are built? Join me in this talk as we explore <a href="https://github.com/ratatui-org/ratatui">Ratatui</a> which aims to provide a wide range of widgets to make it possible to design beautiful interfaces and push the limits of the terminal using Rust.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-1934-introducing-ratatui-a-rust-library-to-cook-up-terminal-user-interfaces/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Orhun Parmaksız":https://fosdem.org/2024/schedule/speaker/orhun_parmaksiz/
+END:VEVENT
+BEGIN:VEVENT
+UID:2972@2024@be.digitalia.fosdem
+DTSTAMP:20240202T152338Z
+DTSTART:20240203T150000Z
+DTEND:20240203T152500Z
+SUMMARY:Wayland's input-method is broken and it's my fault
+DESCRIPTION:I (re)designed the Wayland input-method protocol for Phosh. It worked! Until I tried to implement things like, you know, pre-edit, or moving to the next field. Then I had to switch to another project.
+ I'll describe what's wrong and where to find hope.
+ (Sorry.)
+X-ALT-DESC:<p>I (re)designed the <a href="https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/wip/text-input-next/unstable/text-input/text-input-unstable-v3.xml?ref_type=heads">Wayland input-method protocol</a> for <a href="https://phosh.mobi/">Phosh</a>. It worked! Until I tried to implement things like, you know, pre-edit, or moving to the next field. Then I had to switch to another project.</p>
+ <p>I'll describe what's wrong and where to find hope.</p>
+ <p>(Sorry.)</p>
+CLASS:PUBLIC
+CATEGORIES:FOSS on Mobile Devices devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2972-wayland-s-input-method-is-broken-and-it-s-my-fault/
+LOCATION:H.1309 (Van Rijn)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="dcz":https://fosdem.org/2024/schedule/speaker/dcz/
+END:VEVENT
+BEGIN:VEVENT
+UID:2316@2024@be.digitalia.fosdem
+DTSTAMP:20240202T152338Z
+DTSTART:20240203T160000Z
+DTEND:20240203T163000Z
+SUMMARY:Let's make people love domain names again
+DESCRIPTION:Domain names are not just web addresses; they are the lifeline of digital navigation and identity. But how many professionals are fully conversant with the technical aspects of domains names? There's a lot of room for doubts and errors.
+ Often neglected, zones are complex to handle. Yet, they are nonetheless crucial, helping individuals to better control their private lives on the Internet.
+ HappyDomain aims at simplifying domain management, making them accessibles for everyone. From individuals safeguarding their private lives online, to experienced system administrators overseeing vast digital landscapes.
+ You’ll learn how we try to promote a domain for everyone, with an interface finally designed for humans.
+ In 2024, what features should we expect to help us in our DNS-related tasks?
+X-ALT-DESC:<p>Domain names are not just web addresses; they are the lifeline of digital navigation and identity.
+ But how many professionals are fully conversant with the technical aspects of domains names?
+ There's a lot of room for doubts and errors.</p>
+ <p>Often neglected, <strong>zones are complex to handle</strong>. Yet, they are nonetheless crucial, helping individuals to better control their private lives on the Internet.</p>
+ <p>HappyDomain aims at <strong>simplifying domain management</strong>, making them accessibles for everyone. From individuals safeguarding their private lives online, to experienced system administrators overseeing vast digital landscapes.</p>
+ <p>You’ll learn how we try to promote a domain for everyone, with an interface finally designed for humans.</p>
+ <p>In 2024, what features should we expect to help us in our DNS-related tasks?</p>
+CLASS:PUBLIC
+CATEGORIES:DNS devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2316-let-s-make-people-love-domain-names-again/
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Frédéric Grither":https://fosdem.org/2024/schedule/speaker/frederic_grither/
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Pierre-Olivier Mercier":https://fosdem.org/2024/schedule/speaker/pierre_olivier_mercier/
+END:VEVENT
+BEGIN:VEVENT
+UID:2853@2024@be.digitalia.fosdem
+DTSTAMP:20240202T152338Z
+DTSTART:20240203T170000Z
+DTEND:20240203T173000Z
+SUMMARY:Domain:  A modular Rust DNS toolkit
+DESCRIPTION:The "domain" crate is a Rust library that aims to provide a wide range of building blocks that are necessary or useful when building specialised DNS applications.
+ In this talk we will look at the history, current state, and future of the crate and how it differs from other offerings in the Rust ecosystem. We will explore how the crate aims to leverage Rust’s type system to make it easier to model the complexities of the DNS in a straightforward way that helps make it easier to build correct and efficient applications.
+X-ALT-DESC:<p>The "domain" crate is a Rust library that aims to provide a wide range
+ of building blocks that are necessary or useful when building specialised
+ DNS applications.</p>
+ <p>In this talk we will look at the history, current state, and future of the
+ crate and how it differs from other offerings in the Rust ecosystem. We will
+ explore how the crate aims to leverage Rust’s type system to make it easier
+ to model the complexities of the DNS in a straightforward way that helps
+ make it easier to build correct and efficient applications.</p>
+CLASS:PUBLIC
+CATEGORIES:DNS devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2853-domain-a-modular-rust-dns-toolkit/
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Martin Hoffmann":https://fosdem.org/2024/schedule/speaker/martin_hoffmann/
+END:VEVENT
+BEGIN:VEVENT
+UID:3395@2024@be.digitalia.fosdem
+DTSTAMP:20240202T152338Z
+DTSTART:20240204T081500Z
+DTEND:20240204T082000Z
+SUMMARY:CRA: 40 new ways the CRA can accidentally harm open source
+DESCRIPTION:Following the agreement reached in early December 2023, and pending formal approval by both the European Parliament and the Council, the CRA will be adopted shortly.
+ What's going to happen next?
+ The EU Commission will issue a standardization request to European standardization organizations to develop multiple technical standards (about 40!) defining how to apply the requirements of the CRA. As usual, the devil is in the details, and these standards will substantially shape the future of software in Europe, and as a result, of open source.
+ The problem?
+ The EU standardization organizations which will be tasked with developing those standards (CEN-CENELEC and ETSI) are very formal structures that are as arcane and antithetical to open source communities as the EU legislative process itself was only a few months ago.
+ There's a very serious risk that this upcoming standardization process might happen again with little or no consultation of the impacted open source communities and lead to additional harm as a result, further damaging Europe’s standing in the open source community and its ability to host, foster, contribute to, and leverage open source projects essential to its sovereignty.
+ The goal of this session is to preempt this scenario by proactively engaging with policy makers and carving out a path forward that leads to better outcomes for both Europe and open source.
+X-ALT-DESC:<p>Following the agreement reached in early December 2023, and pending formal approval by both the European Parliament and the Council, the CRA will be adopted shortly.</p>
+ <p>What's going to happen next?</p>
+ <p>The EU Commission will issue a standardization request to European standardization organizations to develop multiple technical standards (about 40!) defining how to apply the requirements of the CRA. As usual, the devil is in the details, and these standards will substantially shape the future of software in Europe, and as a result, of open source.</p>
+ <p>The problem?</p>
+ <p>The EU standardization organizations which will be tasked with developing those standards (CEN-CENELEC and ETSI) are very formal structures that are as arcane and antithetical to open source communities as the EU legislative process itself was only a few months ago.</p>
+ <p>There's a very serious risk that this upcoming standardization process might happen again with little or no consultation of the impacted open source communities and lead to additional harm as a result, further damaging Europe’s standing in the open source community and its ability to host, foster, contribute to, and leverage open source projects essential to its sovereignty.</p>
+ <p>The goal of this session is to preempt this scenario by proactively engaging with policy makers and carving out a path forward that leads to better outcomes for both Europe and open source.</p>
+CLASS:PUBLIC
+CATEGORIES:Open Source In The European Legislative Landscape devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3395-cra-40-new-ways-the-cra-can-accidentally-harm-open-source/
+LOCATION:AW1.120
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Tobie Langel":https://fosdem.org/2024/schedule/speaker/tobie_langel/
+END:VEVENT
+BEGIN:VEVENT
+UID:3575@2024@be.digitalia.fosdem
+DTSTAMP:20240202T152338Z
+DTSTART:20240204T090000Z
+DTEND:20240204T092500Z
+SUMMARY:RISC-V Vector Assembly in dav1d
+DESCRIPTION:RISC-V is an emerging ISA that is rapidly moving from embedded to application processors. The V extension allows for data parallelism through scalable vectors and is currently the only way achieve SIMD speed-ups on RISC-V. This talk will cover recent work adding RISC-V optimizations to the dav1d AV1 decoder project, including details on how to write DSP algorithms in a way that take advantage of both the variable length register and loop unrolling features inherent in RVV. These general approaches should be applicable to other media formats and source code from dav1d can be lifted as-is to jump start RISC-V development in other projects.
+X-ALT-DESC:<p>RISC-V is an emerging ISA that is rapidly moving from embedded to application processors. The V extension allows for data parallelism through scalable vectors and is currently the only way achieve SIMD speed-ups on RISC-V. This talk will cover recent work adding RISC-V optimizations to the dav1d AV1 decoder project, including details on how to write DSP algorithms in a way that take advantage of both the variable length register and loop unrolling features inherent in RVV. These general approaches should be applicable to other media formats and source code from dav1d can be lifted as-is to jump start RISC-V development in other projects.</p>
+CLASS:PUBLIC
+CATEGORIES:Open Media devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3575-risc-v-vector-assembly-in-dav1d/
+LOCATION:UB4.132
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Nathan Egge":https://fosdem.org/2024/schedule/speaker/nathan_egge/
+END:VEVENT
+BEGIN:VEVENT
+UID:2949@2024@be.digitalia.fosdem
+DTSTAMP:20240202T152338Z
+DTSTART:20240204T093000Z
+DTEND:20240204T102500Z
+SUMMARY:Enhancing Linux Accessibility: A Unified Approach
+DESCRIPTION:Join us for a discussion aimed at supporting Linux distribution developers in enhancing accessibility. As blind software engineers, we believe we can bring a unique perspective to this essential endeavor. We'll explore the challenges faced by blind users when using the Linux desktop environment, with a focus on constructive solutions. We will discuss two main topics: lack of preinstalled assistive technologies and accessibility problems of basic components of desktop environments. Our goal is to offer guidance and encouragement to developers, empowering them to create more inclusive experiences for all users. In our vision for the ideal accessibility scenario, Linux distributions seamlessly accommodate the needs of blind users. To achieve this, we'll stress the importance of collaboration among developers and upstream projects, ensuring that accessibility becomes a fundamental consideration in the development process. Additionally, we'll introduce the "Linux Accessibility Guide", a valuable resource that can assist developers in making graphical applications more accessible. This guide will offer practical insights and best practices to support their efforts. Join us as we embark on a journey to improve the accessibility of Linux distributions, fostering an environment where accessibility is a shared goal, benefiting blind users and the entire Linux community. Together, we can create a more accessible and inclusive Linux desktop experience.
+X-ALT-DESC:<p>Join us for a discussion aimed at supporting Linux distribution developers in enhancing accessibility. As blind software engineers, we believe we can bring a unique perspective to this essential endeavor.
+ We'll explore the challenges faced by blind users when using the Linux desktop environment, with a focus on constructive solutions. We will discuss two main topics: lack of preinstalled assistive technologies and accessibility problems of basic components of desktop environments. Our goal is to offer guidance and encouragement to developers, empowering them to create more inclusive experiences for all users.
+ In our vision for the ideal accessibility scenario, Linux distributions seamlessly accommodate the needs of blind users. To achieve this, we'll stress the importance of collaboration among developers and upstream projects, ensuring that accessibility becomes a fundamental consideration in the development process.
+ Additionally, we'll introduce the "Linux Accessibility Guide", a valuable resource that can assist developers in making graphical applications more accessible. This guide will offer practical insights and best practices to support their efforts.
+ Join us as we embark on a journey to improve the accessibility of Linux distributions, fostering an environment where accessibility is a shared goal, benefiting blind users and the entire Linux community. Together, we can create a more accessible and inclusive Linux desktop experience.</p>
+CLASS:PUBLIC
+CATEGORIES:Distributions devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2949-enhancing-linux-accessibility-a-unified-approach/
+LOCATION:UA2.118 (Henriot)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Vojtech Polasek":https://fosdem.org/2024/schedule/speaker/vojtech_polasek/
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Lukáš Tyrychtr":https://fosdem.org/2024/schedule/speaker/lukas_tyrychtr/
+END:VEVENT
+BEGIN:VEVENT
+UID:2606@2024@be.digitalia.fosdem
+DTSTAMP:20240202T152338Z
+DTSTART:20240204T104000Z
+DTEND:20240204T111000Z
+SUMMARY:Can the mold linker be /usr/bin/ld?
+DESCRIPTION:mold is an open-source, fast, and portable linker for ELF. I'm the creator of the mold linker as well as the LLVM lld linker. It looks like mold is rapidly gaining importance among the GNU toolchain users because it's the only modern linker that supports all GCC features. In contrast, GNU ld is too slow for large projects, GNU gold lacks adequate maintenance, and LLVM lld does not support GCC LTO.
+ If mold is better than GNU ld, why can't we use it as /usr/bin/ld? In most instance, we actually can, except one major use case: kernel/embedded programming.
+ In this talk, I'll discuss the current status of the project, how we achieved the speed and while porting it to 15+ targets in just a few years, and our plans for supporting kernel/embedded programming.
+X-ALT-DESC:<p><a href="https://github.com/rui314/mold">mold</a> is an open-source, fast, and portable linker for ELF. I'm the creator of the mold linker as well as the LLVM lld linker. It looks like mold is rapidly gaining importance among the GNU toolchain users because it's the only modern linker that supports all GCC features. In contrast, GNU ld is too slow for large projects, GNU gold lacks adequate maintenance, and LLVM lld does not support GCC LTO.</p>
+ <p>If mold is better than GNU ld, why can't we use it as /usr/bin/ld? In most instance, we actually can, except one major use case: kernel/embedded programming.</p>
+ <p>In this talk, I'll discuss the current status of the project, how we achieved the speed and while porting it to 15+ targets in just a few years, and our plans for supporting kernel/embedded programming.</p>
+CLASS:PUBLIC
+CATEGORIES:GCC devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2606-can-the-mold-linker-be-usr-bin-ld-/
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Rui Ueyama":https://fosdem.org/2024/schedule/speaker/rui_ueyama/
+END:VEVENT
+BEGIN:VEVENT
+UID:2340@2024@be.digitalia.fosdem
+DTSTAMP:20240202T152338Z
+DTSTART:20240204T122000Z
+DTEND:20240204T124000Z
+SUMMARY:Linker Scripts in LLD and how they compare with GNU ld
+DESCRIPTION:LLD supports linker scripts using the GNU ld manual as a de-facto specification. While the information in the manual is necessary, it isn't sufficient as parts are explicitly "implementation defined" and others are underspecified. While many linker scripts will be interpreted the same way in LLD and GNU ld the differences can catch people out. This can extend to the "default" linker script case, which is not handled in the same way by LLD.
+ The talk will cover: * Basics of linker script notation and what they are used for. * The LLD and GNU ld "default" linker script. * How LLD and GNU ld handle parts of the specification that are "implementation defined". * Other known differences between LLD and GNU ld.
+ The talk will be most useful to developers needing to write a linker script, or are interested in how they are implemented.
+X-ALT-DESC:<p>LLD supports linker scripts using the GNU ld manual as a de-facto specification. While the information in the manual is necessary, it isn't sufficient as parts are explicitly "implementation defined" and others are underspecified. While many linker scripts will be interpreted the same way in LLD and GNU ld the differences can catch people out. This can extend to the "default" linker script case, which is not handled in the same way by LLD.</p>
+ <p>The talk will cover:
+ * Basics of linker script notation and what they are used for.
+ * The LLD and GNU ld "default" linker script.
+ * How LLD and GNU ld handle parts of the specification that are "implementation defined".
+ * Other known differences between LLD and GNU ld.</p>
+ <p>The talk will be most useful to developers needing to write a linker script, or are interested in how they are implemented.</p>
+CLASS:PUBLIC
+CATEGORIES:LLVM devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2340-linker-scripts-in-lld-and-how-they-compare-with-gnu-ld/
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Peter Smith":https://fosdem.org/2024/schedule/speaker/peter_smith/
+END:VEVENT
+BEGIN:VEVENT
+UID:3177@2024@be.digitalia.fosdem
+DTSTAMP:20240202T152338Z
+DTSTART:20240204T130500Z
+DTEND:20240204T133000Z
+SUMMARY:Delegated compositing utilizing Wayland protocols for Chromium on ChromeOS
+DESCRIPTION:This talk will cover our experience in utilizing Wayland subsurfaces and implementing delegated compositing for Chromium on ChromeOS. Several concepts will be covered - from overlay making decision in Chromium/Viz to design and implementation of custom Wayland protocols, which were required to pass frame data as overlays via Wayland and reconstruct that frame on the Wayland server side.
+X-ALT-DESC:<p>This talk will cover our experience in utilizing <a href="https://source.chromium.org/chromium/chromium/src/+/main:ui/ozone/platform/wayland/?q=ui%2Fozone%2Fplatform%2Fwayland&amp;ss=chromium">Wayland</a> subsurfaces and implementing delegated compositing for <a href="https://www.chromium.org/Home/">Chromium</a> on <a href="https://www.chromium.org/chromium-os/">ChromeOS</a>. Several concepts will be covered - from overlay making decision in <a href="https://source.chromium.org/chromium/chromium/src/+/main:components/viz/?q=components%2Fviz">Chromium/Viz</a> to design and implementation of custom Wayland protocols, which were required to pass frame data as overlays via Wayland and reconstruct that frame on the <a href="https://source.chromium.org/chromium/chromium/src/+/main:components/exo/?q=components%2Fexo">Wayland server side</a>.</p>
+CLASS:PUBLIC
+CATEGORIES:Graphics devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3177-delegated-compositing-utilizing-wayland-protocols-for-chromium-on-chromeos/
+LOCATION:K.3.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Maksim Sisov":https://fosdem.org/2024/schedule/speaker/maksim_sisov/
+END:VEVENT
+BEGIN:VEVENT
+UID:3034@2024@be.digitalia.fosdem
+DTSTAMP:20240202T152338Z
+DTSTART:20240204T133500Z
+DTEND:20240204T135500Z
+SUMMARY:Linux' receive_fd_replace() semantics confusing
+DESCRIPTION:The current implementation of seccomp's ADDFD uses the receive_fd_replace() helper, and the semantics of this are quite confusing. It does what it says on the tin: it replaces a file descriptor in the fd table of the trapped process. However, various kernel subsystems (e.g. epoll) take a copy of the file descriptor number for their internal data structures, in addition to a ref of the struct file. This creates all sorts of problems: epoll will not report events correctly since the new struct file * is not replaced in the epoll instance, and may generate errors, etc.
+ We'll go over epoll's representation in detail along with our current in-production solution to fix all of this up from userspace. We'll also go over 1, a proposed solution for fixing up epoll in particular, that would require each instance of this to be manually fixed.
+ We're looking for feedback on how to make this faster, and what any potential kernel fixing would look like.
+X-ALT-DESC:<p>The current implementation of seccomp's ADDFD uses the receive_fd_replace()
+ helper, and the semantics of this are quite confusing. It does what it says on
+ the tin: it replaces a file descriptor in the fd table of the trapped process.
+ However, various kernel subsystems (e.g. epoll) take a copy of the file
+ descriptor <em>number</em> for their internal data structures, in addition to a ref of
+ the struct file. This creates all sorts of problems: epoll will not report
+ events correctly since the new struct file * is not replaced in the epoll
+ instance, and may generate errors, etc.</p>
+ <p>We'll go over epoll's representation in detail along with our current
+ in-production solution to fix all of this up from userspace. We'll also go over
+ <a href="https://lore.kernel.org/lkml/20230318060248.848099-1-aloktiagi@gmail.com/">1</a>, a proposed solution for fixing up epoll in particular, that would require
+ each instance of this to be manually fixed.</p>
+ <p>We're looking for feedback on how to make this faster, and what any potential
+ kernel fixing would look like.</p>
+CLASS:PUBLIC
+CATEGORIES:Kernel devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3034-linux-receivefdreplace-semantics-confusing/
+LOCATION:UB5.132
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Tycho Andersen":https://fosdem.org/2024/schedule/speaker/tycho_andersen/
+END:VEVENT
+BEGIN:VEVENT
+UID:3371@2024@be.digitalia.fosdem
+DTSTAMP:20240202T152338Z
+DTSTART:20240204T140000Z
+DTEND:20240204T144000Z
+SUMMARY:What is Linux kernel keystore and why you should use it in your next application
+DESCRIPTION:Did you know that Linux has a full-featured keystore ready to be used by any application or service it runs? Applications can securely store and share credentials, secrets and cryptographic keys, sign and encrypt data, negotiate a common encryption key - all this by never touching a single byte of the underlying cryptographic material.
+ This is especially useful in the post-heartbleed and cloud-native environments, where services authenticate and securely talk to each other using some kind of credentials. But if a network-facing service also has some secret in its process address space, it sets itself up for a security failure as any potential out-of-bounds memory access vulnerability may allow the secret to be leaked. Imagine a world where you don’t have to run an SSH agent just to protect your SSH keys.
+ On top of keeping your secrets secret Linux keystore nicely integrates with specialized security hardware, like TPMs and HSMs and may provide a single entry point on the system for applications to obtain their secrets. Thus Linux keystore is a very useful building block for a corporate key management system.
+X-ALT-DESC:<p>Did you know that Linux has a full-featured keystore ready to be used by any application or service it runs? Applications can securely store and share credentials, secrets and cryptographic keys, sign and encrypt data, negotiate a common encryption key - all this by never touching a single byte of the underlying cryptographic material.</p>
+ <p>This is especially useful in the post-heartbleed and cloud-native environments, where services authenticate and securely talk to each other using some kind of credentials. But if a network-facing service also has some secret in its process address space, it sets itself up for a security failure as any potential out-of-bounds memory access vulnerability may allow the secret to be leaked. Imagine a world where you don’t have to run an SSH agent just to protect your SSH keys.</p>
+ <p>On top of keeping your secrets secret Linux keystore nicely integrates with specialized security hardware, like TPMs and HSMs and may provide a single entry point on the system for applications to obtain their secrets. Thus Linux keystore is a very useful building block for a corporate key management system.</p>
+CLASS:PUBLIC
+CATEGORIES:Kernel devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3371-what-is-linux-kernel-keystore-and-why-you-should-use-it-in-your-next-application/
+LOCATION:UB5.132
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Ignat Korchagin":https://fosdem.org/2024/schedule/speaker/ignat_korchagin/
+END:VEVENT
+BEGIN:VEVENT
+UID:2149@2024@be.digitalia.fosdem
+DTSTAMP:20240202T152338Z
+DTSTART:20240204T144500Z
+DTEND:20240204T151500Z
+SUMMARY:A few limitations in the available fs-related system calls
+DESCRIPTION:Out of curiosity a few months ago, I wrote a tool from scratch to get a backup of my home folder, and preserve as much as possible, including files/folders encrypted with fscrypt, inode creation and change times etc. It works but it's hackish, and the reason is that the currently available system call interface has a few limitations that prevent a cleaner/safer approach. In this presentation I'll try to point out those limitations, present some use cases specific to backup, and hopefully get some feedback on how to proceed.
+X-ALT-DESC:<p>Out of curiosity a few months ago, I wrote a tool from scratch to get a backup of my home folder, and preserve as much as possible, including files/folders encrypted with fscrypt, inode creation and change times etc. It works but it's hackish, and the reason is that the currently available system call interface has a few limitations that prevent a cleaner/safer approach. In this presentation I'll try to point out those limitations, present some use cases specific to backup, and hopefully get some feedback on how to proceed.</p>
+CLASS:PUBLIC
+CATEGORIES:Kernel devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2149-a-few-limitations-in-the-available-fs-related-system-calls/
+LOCATION:UB5.132
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Nick Kossifidis":https://fosdem.org/2024/schedule/speaker/nick_kossifidis/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,440 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//be.digitalia.fosdem//NONSGML 2.2.4//EN
+BEGIN:VEVENT
+UID:2682@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240203T093000Z
+DTEND:20240203T101000Z
+SUMMARY:SemVer in the Rust ecosystem: breakage, tooling, and edge cases
+DESCRIPTION:In theory, semantic versioning (SemVer) is simple: breaking changes require major versions. SemVer rules do not change over time. Crates always adhere to SemVer. Careful coding is enough to avoid accidental breaking changes.
+ None of those statements are true!
+ In practice, SemVer is complex and accidental breakage is common: 1 in 6 of the top 1000 Rust crates has violated semantic versioning at least once, frustrating both users and maintainers alike.
+ If you write Rust but don't have the time for a PhD in SemVer, this talk is for you. We'll take a practical look at SemVer in Rust: what it buys us, how Rust's features lead to strange SemVer edge cases, and how we can prevent accidental breakage using a SemVer linter called cargo-semver-checks.
+X-ALT-DESC:<p>In theory, semantic versioning (SemVer) is simple: breaking changes require major versions. SemVer rules do not change over time. Crates always adhere to SemVer. Careful coding is enough to avoid accidental breaking changes.</p>
+ <p>None of those statements are true!</p>
+ <p>In practice, SemVer is complex and accidental breakage is common: 1 in 6 of the top 1000 Rust crates has violated semantic versioning at least once, frustrating both users and maintainers alike.</p>
+ <p>If you write Rust but don't have the time for a PhD in SemVer, this talk is for you. We'll take a practical look at SemVer in Rust: what it buys us, how Rust's features lead to strange SemVer edge cases, and how we can prevent accidental breakage using a SemVer linter called <a href="https://crates.io/crates/cargo-semver-checks">cargo-semver-checks</a>.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2682-semver-in-the-rust-ecosystem-breakage-tooling-and-edge-cases/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Predrag Gruevski":https://fosdem.org/2024/schedule/speaker/predrag_gruevski/
+END:VEVENT
+BEGIN:VEVENT
+UID:1638@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240203T101500Z
+DTEND:20240203T103500Z
+SUMMARY:Writing your own Rust linter
+DESCRIPTION:This talk will show you how to write your own rust linter using the rustc_tools crate which allows you to have access to the rust compiler API. It can be quite useful if you need specific lints for a project and cannot add them to clippy.
+ It will explain how the compiler API works and give a small example at the end showing it in action.
+X-ALT-DESC:<p>This talk will show you how to write your own rust linter using the <code>rustc_tools</code> crate which allows you to have access to the rust compiler API. It can be quite useful if you need specific lints for a project and cannot add them to clippy.</p>
+ <p>It will explain how the compiler API works and give a small example at the end showing it in action.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-1638-writing-your-own-rust-linter/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Guillaume Gomez":https://fosdem.org/2024/schedule/speaker/guillaume_gomez/
+END:VEVENT
+BEGIN:VEVENT
+UID:2207@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240203T104000Z
+DTEND:20240203T112000Z
+SUMMARY:The plan for gccrs
+DESCRIPTION:gccrs is an alternative implementation of a Rust compiler currently being developed. It aims to become a fully fledged Rust compiler, and hopes to share as much code as possible with the official Rust compiler in order to guarantee correctness and avoid damage on the Rust ecosystem. But how do we plan to integrate Rust components to the GCC codebase, and what sort of components will we reuse? This talk will explore the future of the project, as well as some of the challenges surrounding compilers, and the very silly sounding but real problems of bootstrapping and dogfooding. We will explore the stack of rustc crates that we leverage, how we use them together, and how they will play a part once the compiler has advanced further.
+X-ALT-DESC:<p><code>gccrs</code> is an alternative implementation of a Rust compiler currently being developed. It
+ aims to become a fully fledged Rust compiler, and hopes to share as much code as possible
+ with the official Rust compiler in order to guarantee correctness and avoid damage on the Rust
+ ecosystem. But how do we plan to integrate Rust components to the GCC codebase, and what sort
+ of components will we reuse? This talk will explore the future of the project, as well as some
+ of the challenges surrounding compilers, and the  very silly sounding but real problems of
+ bootstrapping and dogfooding. We will explore the stack of <code>rustc</code> crates that we leverage,
+ how we use them together, and how they will play a part once the compiler has advanced further.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2207-the-plan-for-gccrs/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Arthur Cohen":https://fosdem.org/2024/schedule/speaker/arthur_cohen/
+END:VEVENT
+BEGIN:VEVENT
+UID:2322@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240203T113000Z
+DTEND:20240203T115000Z
+SUMMARY:Hardware pointer checks in a Rust application near you?
+DESCRIPTION:This talk presents a case study in taking a security-focused application to the next level by modifying the Rust compiler to target a capability-based architecture.
+ We will discuss CHERI, a system that enables hardware enforcement of safety constraints at runtime using capabilities, and how we have added support for CHERI to the Rust compiler in order to improve the security of CyberHive Connect, an application that implements an end-to-end encrypted mesh network.
+ Connect can already boast a very high level of security when we consider the protocols it uses, and we can argue that the application itself has many potential vulnerabilities eliminated by being written in Rust. However, just like most real world applications, Connect needs to make use of unsafe code in areas such as the interface with the underlying operating system. This exposes an attack surface in the form of code that the compiler can't guarantee will be safe at runtime.
+ If, however, we make modifications to the Rust compiler to support transferring knowledge about pointer provenance, bounds and other access restrictions to CHERI's capability-based runtime enforcement, then in many cases we should be able to eliminate the potential for unsafe situations to occur.
+ This talk will demonstrate what we have managed to achieve in terms of producing a modified Rust compiler that can target CHERI architectures. We will give an overview of what problems were solved by doing this and how we worked towards getting our real world Rust application running on CHERI.
+X-ALT-DESC:<p>This talk presents a case study in taking a security-focused application to the
+ next level by modifying the Rust compiler to target a capability-based
+ architecture.</p>
+ <p>We will discuss CHERI, a system that enables hardware enforcement of safety
+ constraints at runtime using capabilities, and how we have added support for
+ CHERI to the Rust compiler in order to improve the security of CyberHive
+ Connect, an application that implements an end-to-end encrypted mesh network.</p>
+ <p>Connect can already boast a very high level of security when we consider the
+ protocols it uses, and we can argue that the application itself has many
+ potential vulnerabilities eliminated by being written in Rust. However, just
+ like most real world applications, Connect needs to make use of unsafe code in
+ areas such as the interface with the underlying operating system. This exposes
+ an attack surface in the form of code that the compiler can't guarantee will be
+ safe at runtime.</p>
+ <p>If, however, we make modifications to the Rust compiler to support transferring
+ knowledge about pointer provenance, bounds and other access restrictions to
+ CHERI's capability-based runtime enforcement, then in many cases we should be
+ able to eliminate the potential for unsafe situations to occur.</p>
+ <p>This talk will demonstrate what we have managed to achieve in terms of
+ producing a modified Rust compiler that can target CHERI architectures. We will
+ give an overview of what problems were solved by doing this and how we worked
+ towards getting our real world Rust application running on CHERI.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2322-hardware-pointer-checks-in-a-rust-application-near-you-/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Lewis Revill":https://fosdem.org/2024/schedule/speaker/lewis_revill/
+END:VEVENT
+BEGIN:VEVENT
+UID:2571@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240203T115500Z
+DTEND:20240203T123500Z
+SUMMARY:Proving Performance
+DESCRIPTION:Software engineers choose Rust for its safety and performance baseline. Wizards use Rust's dark arts to improve performance by chanting cursed unsafe-yet-sound expressions. Whether you’re an engineer or a wizard, this talk will give you the tools and best practices to correctly measure and explore Rust’s performance claims against your projects. And wizards will learn when the performance benefits are worth risking nasal demons with unsafe code.
+X-ALT-DESC:<p>Software engineers choose Rust for its safety and performance baseline. Wizards use Rust's dark arts to improve performance by chanting cursed <code>unsafe</code>-yet-sound expressions. Whether you’re an engineer or a wizard, this talk will give you the tools and best practices to correctly measure and explore Rust’s performance claims against your projects. And wizards will learn when the performance benefits are worth risking nasal demons with <code>unsafe</code> code.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2571-proving-performance/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Nikolai Vazquez":https://fosdem.org/2024/schedule/speaker/nikolai_vazquez/
+END:VEVENT
+BEGIN:VEVENT
+UID:2632@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240203T124000Z
+DTEND:20240203T130000Z
+SUMMARY:Friend or Foe Inside? Exploring In-Process Isolation to Maintain Memory Safety for Unsafe Rust
+DESCRIPTION:Rust provides unsafe language features to interact with hardware or call into non-Rust libraries. However, this shifts responsibility for ensuring memory safety to the developer. Failing to do so may lead to memory-safety violations in unsafe code, which can violate the safety of the entire application. In this talk, we explore in-process isolation with Memory Protection Keys as a mechanism to shield safe program sections from safety violations that may happen in unsafe sections. Our approach is easy to use and comprehensive, as it prevents heap and stack-based violations. We further compare process-based and in-process isolation mechanisms and the necessary requirements for data serialization, communication, and context switching. We specifically explored various Rust serialization crates such as Abomonation and bincode. Our results show that in-process isolation can be effective and efficient, permits for a high degree of automation, and also enables a notion of application rewinding where the safe program section may detect and safely handle violations in unsafe code. However, even for modestly sized arguments, the context switch cost starts to get dominated by the cost of data transfer between domains. Here, the Rust data serialization method used can significantly impact performance and thus, it is crucial to optimize it for the use case at hand. We open-source our prototype and experimental evaluation data under a BSD license on GitHub: https://secure-rewind-and-discard.github.io/
+X-ALT-DESC:<p>Rust provides unsafe language features to interact with hardware or call into non-Rust libraries. However, this shifts responsibility for ensuring memory safety to the developer. Failing to do so may lead to memory-safety violations in unsafe code, which can violate the safety of the entire application. In this talk, we explore in-process isolation with Memory Protection Keys as a mechanism to shield safe program sections from safety violations that may happen in unsafe sections. Our approach is easy to use and comprehensive, as it prevents heap and stack-based violations. We further compare process-based and in-process isolation mechanisms and the necessary requirements for data serialization, communication, and context switching. We specifically explored various Rust serialization crates such as Abomonation and bincode. Our results show that in-process isolation can be effective and efficient, permits for a high degree of automation, and also enables a notion of application rewinding where the safe program section may detect and safely handle violations in unsafe code. However, even for modestly sized arguments, the context switch cost starts to get dominated by the cost of data transfer between domains. Here, the Rust data serialization method used can significantly impact performance and thus, it is crucial to optimize it for the use case at hand.
+ We open-source our prototype and experimental evaluation data under a BSD license on GitHub: https://secure-rewind-and-discard.github.io/</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2632-friend-or-foe-inside-exploring-in-process-isolation-to-maintain-memory-safety-for-unsafe-rust/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Merve Gülmez":https://fosdem.org/2024/schedule/speaker/merve_gulmez/
+END:VEVENT
+BEGIN:VEVENT
+UID:2434@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240203T130500Z
+DTEND:20240203T134500Z
+SUMMARY:The Four Horsemen of Bad Rust Code
+DESCRIPTION:In the right hands, Rust is an exceptionally powerful language. Yet, I frequently observe similar mistakes in Rust programming: treating it like C or Java and not fully utilizing its unique features. I've concluded that poor Rust coding often falls into a few distinct categories, which I've termed the '4 Horsemen of Bad Rust Code': Overengineering, Simplistic Design, Premature Optimization, and Neglect of Documentation and Testing. This talk will delve into these antipatterns and offer strategies to avoid them, aiming to share practical tips for writing more ergonomic and effective Rust code. During the talk, we will gradually refactor a Rust code example, transforming it from a less optimal version to a more idiomatic and efficient one.
+X-ALT-DESC:<p>In the right hands, Rust is an exceptionally powerful language. Yet, I frequently observe similar mistakes in Rust programming: treating it like C or Java and not fully utilizing its unique features. I've concluded that poor Rust coding often falls into a few distinct categories, which I've termed the '4 Horsemen of Bad Rust Code': Overengineering, Simplistic Design, Premature Optimization, and Neglect of Documentation and Testing. This talk will delve into these antipatterns and offer strategies to avoid them, aiming to share practical tips for writing more ergonomic and effective Rust code.
+ During the talk, we will gradually refactor a Rust code example, transforming it from a less optimal version to a more idiomatic and efficient one.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2434-the-four-horsemen-of-bad-rust-code/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Matthias Endler":https://fosdem.org/2024/schedule/speaker/matthias_endler/
+END:VEVENT
+BEGIN:VEVENT
+UID:1934@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240203T135000Z
+DTEND:20240203T143000Z
+SUMMARY:Introducing Ratatui: A Rust library to cook up terminal user interfaces
+DESCRIPTION:Have you ever wondered how terminal user interface applications are built? Join me in this talk as we explore Ratatui which aims to provide a wide range of widgets to make it possible to design beautiful interfaces and push the limits of the terminal using Rust.
+X-ALT-DESC:<p>Have you ever wondered how terminal user interface applications are built? Join me in this talk as we explore <a href="https://github.com/ratatui-org/ratatui">Ratatui</a> which aims to provide a wide range of widgets to make it possible to design beautiful interfaces and push the limits of the terminal using Rust.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-1934-introducing-ratatui-a-rust-library-to-cook-up-terminal-user-interfaces/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Orhun Parmaksız":https://fosdem.org/2024/schedule/speaker/orhun_parmaksiz/
+END:VEVENT
+BEGIN:VEVENT
+UID:1691@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240203T143500Z
+DTEND:20240203T145500Z
+SUMMARY:WASM 101: porting a Sega Game Gear emulator to the browser
+DESCRIPTION:I wrote my first emulator while learning Rust. Then, I wanted to make it available on the universal platform, the web. Using WASM, we'll see how to port a desktop app in pure Rust to a webapp using WASM. We'll survey the WASM ecosystem: tools, crates, and share tips and hurdles found along the way. Most native languages nowadays can be compiled to WASM, and Rust is no exception. Using an emulator written in pure Rust, we'll explore the challenges of porting a desktop Linux app to the web platform. How hard can it be ? Following through the outline of the emulator, we'll go step by step, and expose which crates make that easy, discover how mature is the Rust WASM ecosystem and tools we need to use to port an app.
+X-ALT-DESC:<p>I wrote my first emulator while learning Rust. Then, I wanted to make it available on the universal platform, the web. Using WASM, we'll see how to port a desktop app in pure Rust to a webapp using WASM. We'll survey the WASM ecosystem: tools, crates, and share tips and hurdles found along the way.
+ Most native languages nowadays can be compiled to WASM, and Rust is no exception. Using an emulator written in pure Rust, we'll explore the challenges of porting a desktop Linux app to the web platform. How hard can it be ? Following through the outline of the emulator, we'll go step by step, and expose which crates make that easy, discover how mature is the Rust WASM ecosystem and tools we need to use to port an app.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-1691-wasm-101-porting-a-sega-game-gear-emulator-to-the-browser/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Anisse Astier":https://fosdem.org/2024/schedule/speaker/anisse_astier/
+END:VEVENT
+BEGIN:VEVENT
+UID:2703@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240203T150000Z
+DTEND:20240203T154000Z
+SUMMARY:A Deep Dive into Tower
+DESCRIPTION:Tower is a crate of “modular and reusable components for building robust networking clients and servers” widely used in prominent projects within the Rust ecosystem, including Hyper*, Axum, or Tonic. This ubiquity means Rust developers invariably engage with the Service trait, Tower's core abstraction, while working with these libraries. Despite its conciseness, reading and understanding code that abstracts over the Service trait proves challenging because of the heavy use of generics and intricacies of implementing non-boxed futures. This complexity raises the learning curve for beginner and intermediate Rust developers to become proficient in their favorite frameworks. In this talk, we will demystify the Service trait, explore practical examples from real-world codebases, and construct increasingly complex Tower layers from scratch.
+ *Hyper actually relies on its own very similar hyper::Service trait.
+X-ALT-DESC:<p>Tower is a crate of “modular and reusable components for building robust networking clients and servers” widely used in prominent projects within the Rust ecosystem, including Hyper*, Axum, or Tonic. This ubiquity means Rust developers invariably engage with the <code>Service</code> trait, Tower's core abstraction, while working with these libraries. Despite its conciseness, reading and understanding code that abstracts over the <code>Service</code> trait proves challenging because of the heavy use of generics and intricacies of implementing non-boxed futures. This complexity raises the learning curve for beginner and intermediate Rust developers to become proficient in their favorite frameworks. In this talk, we will demystify the <code>Service</code> trait, explore practical examples from real-world codebases, and construct increasingly complex Tower layers from scratch.</p>
+ <p>*Hyper actually relies on its own very similar <code>hyper::Service</code> trait.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2703-a-deep-dive-into-tower/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Adrien Guillo":https://fosdem.org/2024/schedule/speaker/adrien_guillo/
+END:VEVENT
+BEGIN:VEVENT
+UID:2835@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240203T150000Z
+DTEND:20240203T153000Z
+SUMMARY:Algo-rollover for .nl
+DESCRIPTION:This is a talk about the algroithm rollover which happend in the summer 2023, what were the challanges we (as SIDN) faced and how did we handle them. For the signing of the .nl zone we use the open source components OpenDNSSEC, Bind and validns
+X-ALT-DESC:<p>This is a talk about the algroithm rollover which happend in the summer 2023, what were the challanges we (as SIDN) faced and how did we handle them. For the signing of the .nl zone we use the open source components <a href="https://www.opendnssec.org/">OpenDNSSEC</a>, <a href="https://www.isc.org/bind/">Bind</a> and <a href="https://github.com/tobez/validns">validns</a></p>
+CLASS:PUBLIC
+CATEGORIES:DNS devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2835-algo-rollover-for-nl/
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Stefan Ubbink":https://fosdem.org/2024/schedule/speaker/stefan_ubbink/
+END:VEVENT
+BEGIN:VEVENT
+UID:2972@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240203T150000Z
+DTEND:20240203T152500Z
+SUMMARY:Wayland's input-method is broken and it's my fault
+DESCRIPTION:I (re)designed the Wayland input-method protocol for Phosh. It worked! Until I tried to implement things like, you know, pre-edit, or moving to the next field. Then I had to switch to another project.
+ I'll describe what's wrong and where to find hope.
+ (Sorry.)
+X-ALT-DESC:<p>I (re)designed the <a href="https://gitlab.freedesktop.org/wayland/wayland-protocols/-/blob/wip/text-input-next/unstable/text-input/text-input-unstable-v3.xml?ref_type=heads">Wayland input-method protocol</a> for <a href="https://phosh.mobi/">Phosh</a>. It worked! Until I tried to implement things like, you know, pre-edit, or moving to the next field. Then I had to switch to another project.</p>
+ <p>I'll describe what's wrong and where to find hope.</p>
+ <p>(Sorry.)</p>
+CLASS:PUBLIC
+CATEGORIES:FOSS on Mobile Devices devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2972-wayland-s-input-method-is-broken-and-it-s-my-fault/
+LOCATION:H.1309 (Van Rijn)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="dcz":https://fosdem.org/2024/schedule/speaker/dcz/
+END:VEVENT
+BEGIN:VEVENT
+UID:2321@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240203T154500Z
+DTEND:20240203T160500Z
+SUMMARY:Embedding Servo in Rust projects
+DESCRIPTION:Servo project have got a renewed activity since 2023 after a few slow years. One of the goals for this year has been making Servo a practical embeddable rendering engine, making easier to embed it in Rust projects. We’ve already come a long way in this area. A key achievement is our development of a minibrowser, which showcases how the Servo engine can be integrated.
+ In this talk, the main focus will be on the embedding of Servo. We will dive into the technical aspects of the minibrowser, demonstrating how our developments have streamlined the process of embedding Servo, the challenges we’ve faced, and the solutions we’ve developed. Additionally, we will also talk about the future direction of Servo embedding in Rust projects.
+X-ALT-DESC:<p>Servo project have got a renewed activity since 2023 after a few slow years. One of the goals for this year has been making Servo a practical embeddable rendering engine, making easier to embed it in Rust projects. We’ve already come a long way in this area. A key achievement is our development of a minibrowser, which showcases how the Servo engine can be integrated.</p>
+ <p>In this talk, the main focus will be on the embedding of Servo. We will dive into the technical aspects of the minibrowser, demonstrating how our developments have streamlined the process of embedding Servo, the challenges we’ve faced, and the solutions we’ve developed. Additionally, we will also talk about the future direction of Servo embedding in Rust projects.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2321-embedding-servo-in-rust-projects/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Rakhi Sharma":https://fosdem.org/2024/schedule/speaker/rakhi_sharma/
+END:VEVENT
+BEGIN:VEVENT
+UID:2469@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240203T161000Z
+DTEND:20240203T165000Z
+SUMMARY:Thunderbird: How to Exchange Rot For Rust
+DESCRIPTION:Thunderbird has gone through a lot of changes recently, notably through the Supernova release, which was published in the summer of 2023, and is still rapidly evolving. Part of the work we have been doing in the background to enable this evolution is adding support for Rust to the Thunderbird code base.
+ In this talk, we'll tell the story of how we achieved this and what lessons we learned along the way. We’ll also show how we’re using Rust to both improve the existing code architecture, and build new features for Thunderbird such as support for Microsoft Exchange.
+X-ALT-DESC:<p>Thunderbird has gone through a lot of changes recently, notably through the Supernova release, which was published in the summer of 2023, and is still rapidly evolving. Part of the work we have been doing in the background to enable this evolution is adding support for Rust to the Thunderbird code base.</p>
+ <p>In this talk, we'll tell the story of how we achieved this and what lessons we learned along the way. We’ll also show how we’re using Rust to both improve the existing code architecture, and build new features for Thunderbird such as support for Microsoft Exchange.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2469-thunderbird-how-to-exchange-rot-for-rust/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Brendan Abolivier":https://fosdem.org/2024/schedule/speaker/brendan_abolivier/
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Ikey Doherty":https://fosdem.org/2024/schedule/speaker/ikey_doherty/
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Sean Burke":https://fosdem.org/2024/schedule/speaker/sean_burke/
+END:VEVENT
+BEGIN:VEVENT
+UID:2420@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240203T172000Z
+DTEND:20240203T180000Z
+SUMMARY:The journey of hacking in a new serde dataformat
+DESCRIPTION:The latest version of neo4rs—a Rust driver for the Neo4j graph database developed under the "Neo4j Labs" incubator—changes its API for reading data to use serde. Serde is a library for serialization and deserialization of any user-defined type into and from a number of different data formats. Most material about serde focuses on the user-defined types, though for this talk, I want to present the—still ongoing—journey of building a new bolt dataformat for serde. Follow me down the rabbit hole and peek under the hood of serde to show how the various types and traits interact, what gotchas and caveats await and how to craft an API that is more than just 1:1 struct <--> data mapping.
+X-ALT-DESC:<p>The latest version of <a href="https://github.com/neo4j-labs/neo4rs"><code>neo4rs</code></a>—a Rust driver for the Neo4j graph database developed under the "Neo4j Labs" incubator—changes its API for reading data to use serde. Serde is a library for <em>ser</em>ialization and <em>de</em>serialization of any user-defined type into and from a number of different data formats.
+ Most material about serde focuses on the user-defined types, though for this talk, I want to present the—still ongoing—journey of building a new <a href="https://7687.org">bolt</a> dataformat for serde. Follow me down the rabbit hole and peek under the hood of serde to show how the various types and traits interact, what gotchas and caveats await and how to craft an API that is more than just 1:1 struct &lt;--&gt; data mapping.</p>
+CLASS:PUBLIC
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2420-the-journey-of-hacking-in-a-new-serde-dataformat/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Paul Horn":https://fosdem.org/2024/schedule/speaker/paul_horn/
+END:VEVENT
+BEGIN:VEVENT
+UID:3598@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240204T080000Z
+DTEND:20240204T085000Z
+SUMMARY:Beyond Joins and Indexes
+DESCRIPTION:My presentation Explaining the Postgres Query Optimizer covers the details of query optimization, optimizer statistics, joins, and indexes. This talk covers 42 other operations the optimizer can choose to handle complex queries, large data sets, and to enhance performance. These include merge append, gather, memoize, and hash aggregate. It explains their purpose and shows queries that can generate these operations.
+X-ALT-DESC:<p>My presentation Explaining the Postgres Query Optimizer covers the details of query optimization, optimizer statistics, joins, and indexes. This talk covers 42 other operations the optimizer can choose to handle complex queries, large data sets, and to enhance performance. These include merge append, gather, memoize, and hash aggregate. It explains their purpose and shows queries that can generate these operations.</p>
+CLASS:PUBLIC
+CATEGORIES:PostgreSQL devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3598-beyond-joins-and-indexes/
+LOCATION:UD2.120 (Chavanne)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Bruce Momjian":https://fosdem.org/2024/schedule/speaker/bruce_momjian/
+END:VEVENT
+BEGIN:VEVENT
+UID:1931@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240204T090000Z
+DTEND:20240204T095000Z
+SUMMARY:You too could have made curl!
+DESCRIPTION:Daniel has taken the curl project to run in some 20 billion installations. He talks about what it takes to succeed with Open Source: patience, time, ups and downs, cooperation, fighting your impostor syndrome - all while having fun. There's no genius or magic trick behind successful open source. You can do it. The talk will of course be spiced up with anecdotes, experiences and stories from Daniel's 25 years of leading the curl project.
+X-ALT-DESC:<p>Daniel has taken the curl project to run in some 20 billion installations. He talks about what it takes to succeed with Open Source: patience, time, ups and downs, cooperation, fighting your impostor syndrome - all while having fun. There's no genius or magic trick behind successful open source. You can do it. The talk will of course be spiced up with anecdotes, experiences and stories from Daniel's 25 years of leading the curl project.</p>
+CLASS:PUBLIC
+CATEGORIES:Main Track - K Building
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-1931-you-too-could-have-made-curl-/
+LOCATION:K.1.105 (La Fontaine)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Daniel Stenberg":https://fosdem.org/2024/schedule/speaker/daniel_stenberg/
+END:VEVENT
+BEGIN:VEVENT
+UID:3575@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240204T090000Z
+DTEND:20240204T092500Z
+SUMMARY:RISC-V Vector Assembly in dav1d
+DESCRIPTION:RISC-V is an emerging ISA that is rapidly moving from embedded to application processors. The V extension allows for data parallelism through scalable vectors and is currently the only way achieve SIMD speed-ups on RISC-V. This talk will cover recent work adding RISC-V optimizations to the dav1d AV1 decoder project, including details on how to write DSP algorithms in a way that take advantage of both the variable length register and loop unrolling features inherent in RVV. These general approaches should be applicable to other media formats and source code from dav1d can be lifted as-is to jump start RISC-V development in other projects.
+X-ALT-DESC:<p>RISC-V is an emerging ISA that is rapidly moving from embedded to application processors. The V extension allows for data parallelism through scalable vectors and is currently the only way achieve SIMD speed-ups on RISC-V. This talk will cover recent work adding RISC-V optimizations to the dav1d AV1 decoder project, including details on how to write DSP algorithms in a way that take advantage of both the variable length register and loop unrolling features inherent in RVV. These general approaches should be applicable to other media formats and source code from dav1d can be lifted as-is to jump start RISC-V development in other projects.</p>
+CLASS:PUBLIC
+CATEGORIES:Open Media devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3575-risc-v-vector-assembly-in-dav1d/
+LOCATION:UB4.132
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Nathan Egge":https://fosdem.org/2024/schedule/speaker/nathan_egge/
+END:VEVENT
+BEGIN:VEVENT
+UID:3102@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240204T091000Z
+DTEND:20240204T093000Z
+SUMMARY:libvpoll: create synthetic events for poll, select and friends
+DESCRIPTION:Many programs use poll/select system calls to wait for events that are triggered by file descriptor I/O events. For instance, to write a library able to behave like a network stack (e.g. lwip and picoTCP) or a device, it's possible to implement functions like my_socket, my_accept, my_open and my_ioctl, as drop-in replacement of the system call counterparts. Additionally, it's possible to use dynamic library magic to rename/divert the system call requests to use their virtual implementation provided by the library. Unfortunately this approach cannot be applied to poll/select system calls because Linux doesn't have a system call that permits to generate synthetic generic events for a file descriptor, so it is not possible for libraries to provide file descriptors suitable for select/poll system calls.
+ libvpoll permits to define file descriptors whose I/O events can be generated at user level. This permits to generate synthetic events for poll, select, ppoll, pselect, epoll, etc. The libvpoll library can use two different supports: a module that provides a virtual device and a kernel patch extending the eventfd system call. When neither are availables, a feature-limited emulation is provided as a fallback: based on pipe it manages only POLLIN and POLLOUT. This approach allows mixing real file descriptors with others provided by libraries as parameters of poll/select system calls. For example libvpoll has been used in picoxnet, a user-level network stack implemented as a library for the Internet of Threads. libvpoll, as well as the kernel device module, are already available in Debian.
+X-ALT-DESC:<p>Many programs use poll/select system calls to wait for events that are triggered by file descriptor I/O events.
+ For instance, to write a library able to behave like a network stack (e.g. lwip and picoTCP) or a device, it's possible to implement functions like my_socket, my_accept, my_open and my_ioctl, as drop-in replacement of the system call counterparts.
+ Additionally, it's possible to use dynamic library magic to rename/divert the system call requests to use their virtual implementation provided by the library.
+ Unfortunately this approach cannot be applied to poll/select system calls because Linux doesn't have a system call that permits to generate synthetic generic events for a file descriptor, so it is not possible for libraries to provide file descriptors suitable for select/poll system calls.</p>
+ <p><a href="https://github.com/rd235/libvpoll-eventfd">libvpoll</a> permits to define file descriptors whose I/O events can be generated at user level.
+ This permits to generate synthetic events for poll, select, ppoll, pselect, epoll, etc.
+ The libvpoll library can use two different supports: a module that provides a virtual device and a kernel patch extending the eventfd system call.
+ When neither are availables, a feature-limited emulation is provided as a fallback: based on pipe it manages only POLLIN and POLLOUT.
+ This approach allows mixing real file descriptors with others provided by libraries as parameters of poll/select system calls.
+ For example libvpoll has been used in <a href="https://github.com/virtualsquare/picoxnet">picoxnet</a>, a user-level network stack implemented as a library for the <a href="https://wiki.virtualsquare.org/#/tutorials/ioth">Internet of Threads</a>.
+ libvpoll, as well as the kernel device module, are already available in Debian.</p>
+CLASS:PUBLIC
+CATEGORIES:Kernel devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3102-libvpoll-create-synthetic-events-for-poll-select-and-friends/
+LOCATION:UB5.132
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Luca Bassi":https://fosdem.org/2024/schedule/speaker/luca_bassi/
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Renzo Davoli":https://fosdem.org/2024/schedule/speaker/renzo_davoli/
+END:VEVENT
+BEGIN:VEVENT
+UID:2606@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240204T104000Z
+DTEND:20240204T111000Z
+SUMMARY:Can the mold linker be /usr/bin/ld?
+DESCRIPTION:mold is an open-source, fast, and portable linker for ELF. I'm the creator of the mold linker as well as the LLVM lld linker. It looks like mold is rapidly gaining importance among the GNU toolchain users because it's the only modern linker that supports all GCC features. In contrast, GNU ld is too slow for large projects, GNU gold lacks adequate maintenance, and LLVM lld does not support GCC LTO.
+ If mold is better than GNU ld, why can't we use it as /usr/bin/ld? In most instance, we actually can, except one major use case: kernel/embedded programming.
+ In this talk, I'll discuss the current status of the project, how we achieved the speed and while porting it to 15+ targets in just a few years, and our plans for supporting kernel/embedded programming.
+X-ALT-DESC:<p><a href="https://github.com/rui314/mold">mold</a> is an open-source, fast, and portable linker for ELF. I'm the creator of the mold linker as well as the LLVM lld linker. It looks like mold is rapidly gaining importance among the GNU toolchain users because it's the only modern linker that supports all GCC features. In contrast, GNU ld is too slow for large projects, GNU gold lacks adequate maintenance, and LLVM lld does not support GCC LTO.</p>
+ <p>If mold is better than GNU ld, why can't we use it as /usr/bin/ld? In most instance, we actually can, except one major use case: kernel/embedded programming.</p>
+ <p>In this talk, I'll discuss the current status of the project, how we achieved the speed and while porting it to 15+ targets in just a few years, and our plans for supporting kernel/embedded programming.</p>
+CLASS:PUBLIC
+CATEGORIES:GCC devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2606-can-the-mold-linker-be-usr-bin-ld-/
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Rui Ueyama":https://fosdem.org/2024/schedule/speaker/rui_ueyama/
+END:VEVENT
+BEGIN:VEVENT
+UID:3160@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240204T120000Z
+DTEND:20240204T123000Z
+SUMMARY:The Basic Economics behind Open Source Funding in 2024
+DESCRIPTION:You have a project. They use your project. They have money. They give you money. It should only be so simple, but it still isn't despite the many platforms, blogs, and advice on how to get paid for your open source work. In this talk, we will fundamentally explain the kinds of economic models of open source, including a basic taxonomy on types of funds and funders, special considerations and points of friction for open hardware, and how to unblock your projects and communities from funding challenges.
+X-ALT-DESC:<p>You have a project. They use your project. They have money. They give you money. It should only be so simple, but it still isn't despite the many platforms, blogs, and advice on how to get paid for your open source work. In this talk, we will fundamentally explain the kinds of economic models of open source, including a basic taxonomy on types of funds and funders, special considerations and points of friction for open hardware, and how to unblock your projects and communities from funding challenges.</p>
+CLASS:PUBLIC
+CATEGORIES:Open Hardware and CAD/CAM devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3160-the-basic-economics-behind-open-source-funding-in-2024/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="amanda casari":https://fosdem.org/2024/schedule/speaker/amanda_casari/
+END:VEVENT
+BEGIN:VEVENT
+UID:2340@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240204T122000Z
+DTEND:20240204T124000Z
+SUMMARY:Linker Scripts in LLD and how they compare with GNU ld
+DESCRIPTION:LLD supports linker scripts using the GNU ld manual as a de-facto specification. While the information in the manual is necessary, it isn't sufficient as parts are explicitly "implementation defined" and others are underspecified. While many linker scripts will be interpreted the same way in LLD and GNU ld the differences can catch people out. This can extend to the "default" linker script case, which is not handled in the same way by LLD.
+ The talk will cover: * Basics of linker script notation and what they are used for. * The LLD and GNU ld "default" linker script. * How LLD and GNU ld handle parts of the specification that are "implementation defined". * Other known differences between LLD and GNU ld.
+ The talk will be most useful to developers needing to write a linker script, or are interested in how they are implemented.
+X-ALT-DESC:<p>LLD supports linker scripts using the GNU ld manual as a de-facto specification. While the information in the manual is necessary, it isn't sufficient as parts are explicitly "implementation defined" and others are underspecified. While many linker scripts will be interpreted the same way in LLD and GNU ld the differences can catch people out. This can extend to the "default" linker script case, which is not handled in the same way by LLD.</p>
+ <p>The talk will cover:
+ * Basics of linker script notation and what they are used for.
+ * The LLD and GNU ld "default" linker script.
+ * How LLD and GNU ld handle parts of the specification that are "implementation defined".
+ * Other known differences between LLD and GNU ld.</p>
+ <p>The talk will be most useful to developers needing to write a linker script, or are interested in how they are implemented.</p>
+CLASS:PUBLIC
+CATEGORIES:LLVM devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2340-linker-scripts-in-lld-and-how-they-compare-with-gnu-ld/
+LOCATION:K.4.201
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Peter Smith":https://fosdem.org/2024/schedule/speaker/peter_smith/
+END:VEVENT
+BEGIN:VEVENT
+UID:3611@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240204T130000Z
+DTEND:20240204T135000Z
+SUMMARY:So you think you know Git
+DESCRIPTION:Advanced Git Tips and Tricks
+ Git has been the de-facto version control system used by nearly every developer in the world for almost a decade now. While most of us know the basics, there are depths and hidden valleys of our Git tooling that even the most experienced of us may have never even heard of. Join Scott Chacon, a GitHub co-founder and the author of Pro Git, to dig into the hidden depths of obscure command line invocations to get more out of the amazing tool you use every day.
+X-ALT-DESC:<p><em>Advanced Git Tips and Tricks</em></p>
+ <p>Git has been the de-facto version control system used by nearly every developer in the world for almost a decade now. While most of us know the basics, there are depths and hidden valleys of our Git tooling that even the most experienced of us may have never even heard of. Join Scott Chacon, a GitHub co-founder and the author of Pro Git, to dig into the hidden depths of obscure command line invocations to get more out of the amazing tool you use every day.</p>
+CLASS:PUBLIC
+CATEGORIES:Main Track - K Building
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3611-so-you-think-you-know-git/
+LOCATION:K.1.105 (La Fontaine)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Scott Chacon":https://fosdem.org/2024/schedule/speaker/scott_chacon/
+END:VEVENT
+BEGIN:VEVENT
+UID:3423@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240204T140000Z
+DTEND:20240204T145000Z
+SUMMARY:Version control post-Git
+DESCRIPTION:Since Darcs, Git and Mercurial were published 15 years ago as the first generation of distributed version control systems, distributed computing has seen exciting progress, in particular with mathematical formalisations of "ideal" distributed datastructures (CRDTs for example).
+ In this talk, I'll show our work on Pijul, a version control system with sound mathematical properties, making it easy and intuitive to use for non-coders, as well as scalable to arbitrarily large monorepos and binary files.
+ I'll explain how the core datastructures were "found" rather than designed, why we had to write a new open source key-value store to fork tables efficiently (zero-copy forks), and how that key-value store ended up breaking all known performance records.
+X-ALT-DESC:<p>Since Darcs, Git and Mercurial were published 15 years ago as the first generation of distributed version control systems, distributed computing has seen exciting progress, in particular with mathematical formalisations of "ideal" distributed datastructures (CRDTs for example).</p>
+ <p>In this talk, I'll show our work on Pijul, a version control system with sound mathematical properties, making it easy and intuitive to use for non-coders, as well as scalable to arbitrarily large monorepos and binary files.</p>
+ <p>I'll explain how the core datastructures were "found" rather than designed, why we had to write a new open source key-value store to fork tables efficiently (zero-copy forks), and how that key-value store ended up breaking all known performance records.</p>
+CLASS:PUBLIC
+CATEGORIES:Main Track - K Building
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3423-version-control-post-git/
+LOCATION:K.1.105 (La Fontaine)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Pierre-Étienne Meunier":https://fosdem.org/2024/schedule/speaker/pierre_etienne_meunier/
+END:VEVENT
+BEGIN:VEVENT
+UID:2149@2024@be.digitalia.fosdem
+DTSTAMP:20240202T153825Z
+DTSTART:20240204T144500Z
+DTEND:20240204T151500Z
+SUMMARY:A few limitations in the available fs-related system calls
+DESCRIPTION:Out of curiosity a few months ago, I wrote a tool from scratch to get a backup of my home folder, and preserve as much as possible, including files/folders encrypted with fscrypt, inode creation and change times etc. It works but it's hackish, and the reason is that the currently available system call interface has a few limitations that prevent a cleaner/safer approach. In this presentation I'll try to point out those limitations, present some use cases specific to backup, and hopefully get some feedback on how to proceed.
+X-ALT-DESC:<p>Out of curiosity a few months ago, I wrote a tool from scratch to get a backup of my home folder, and preserve as much as possible, including files/folders encrypted with fscrypt, inode creation and change times etc. It works but it's hackish, and the reason is that the currently available system call interface has a few limitations that prevent a cleaner/safer approach. In this presentation I'll try to point out those limitations, present some use cases specific to backup, and hopefully get some feedback on how to proceed.</p>
+CLASS:PUBLIC
+CATEGORIES:Kernel devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2149-a-few-limitations-in-the-available-fs-related-system-calls/
+LOCATION:UB5.132
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Nick Kossifidis":https://fosdem.org/2024/schedule/speaker/nick_kossifidis/
+END:VEVENT
+END:VCALENDAR
