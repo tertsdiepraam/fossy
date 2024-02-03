@@ -3,7 +3,7 @@ VERSION:2.0
 PRODID:-//be.digitalia.fosdem//NONSGML 2.1.3//EN
 BEGIN:VEVENT
 UID:2682@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240203T093000Z
 DTEND:20240203T101000Z
 SUMMARY:SemVer in the Rust ecosystem: breakage, tooling, and edge cases
@@ -23,7 +23,7 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Predrag Gruevski":https://fo
 END:VEVENT
 BEGIN:VEVENT
 UID:1638@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240203T101500Z
 DTEND:20240203T103500Z
 SUMMARY:Writing your own Rust linter
@@ -39,7 +39,7 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Guillaume Gomez":https://fos
 END:VEVENT
 BEGIN:VEVENT
 UID:2207@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240203T104000Z
 DTEND:20240203T112000Z
 SUMMARY:The plan for gccrs
@@ -60,7 +60,7 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Arthur Cohen":https://fosdem
 END:VEVENT
 BEGIN:VEVENT
 UID:2571@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240203T115500Z
 DTEND:20240203T123500Z
 SUMMARY:Proving Performance
@@ -73,24 +73,23 @@ LOCATION:H.1308 (Rolin)
 ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Nikolai Vazquez":https://fosdem.org/2024/schedule/speaker/nikolai_vazquez/
 END:VEVENT
 BEGIN:VEVENT
-UID:2163@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
-DTSTART:20240203T125000Z
-DTEND:20240203T132500Z
-SUMMARY:Evolving your APIs, a step-by-step approach
-DESCRIPTION:When you publish your first HTTP API, you’re more focused on short-term issues than planning for the future. However, chances are you’ll be successful, and you’ll “hit the wall”. How do you evolve your API without breaking the contract with your existing users?
- In this talk, I’ll first show you some tips and tricks to achieve that: moving your endpoints, deprecating them, monitoring who’s using them, and letting users know about the new endpoints. The talk is demo-based, and I’ll use the Apache APISIX project for it.
-X-ALT-DESC:<p>When you publish your first HTTP API, you’re more focused on short-term issues than planning for the future. However, chances are you’ll be successful, and you’ll “hit the wall”. How do you evolve your API without breaking the contract with your existing users?</p>
- <p>In this talk, I’ll first show you some tips and tricks to achieve that: moving your endpoints, deprecating them, monitoring who’s using them, and letting users know about the new endpoints. The talk is demo-based, and I’ll use the Apache APISIX project for it.</p>
+UID:2632@2024@be.digitalia.fosdem
+DTSTAMP:20240203T070131Z
+DTSTART:20240203T124000Z
+DTEND:20240203T130000Z
+SUMMARY:Friend or Foe Inside? Exploring In-Process Isolation to Maintain Memory Safety for Unsafe Rust
+DESCRIPTION:Rust provides unsafe language features to interact with hardware or call into non-Rust libraries. However, this shifts responsibility for ensuring memory safety to the developer. Failing to do so may lead to memory-safety violations in unsafe code, which can violate the safety of the entire application. In this talk, we explore in-process isolation with Memory Protection Keys as a mechanism to shield safe program sections from safety violations that may happen in unsafe sections. Our approach is easy to use and comprehensive, as it prevents heap and stack-based violations. We further compare process-based and in-process isolation mechanisms and the necessary requirements for data serialization, communication, and context switching. We specifically explored various Rust serialization crates such as Abomonation and bincode. Our results show that in-process isolation can be effective and efficient, permits for a high degree of automation, and also enables a notion of application rewinding where the safe program section may detect and safely handle violations in unsafe code. However, even for modestly sized arguments, the context switch cost starts to get dominated by the cost of data transfer between domains. Here, the Rust data serialization method used can significantly impact performance and thus, it is crucial to optimize it for the use case at hand. We open-source our prototype and experimental evaluation data under a BSD license on GitHub: https://secure-rewind-and-discard.github.io/
+X-ALT-DESC:<p>Rust provides unsafe language features to interact with hardware or call into non-Rust libraries. However, this shifts responsibility for ensuring memory safety to the developer. Failing to do so may lead to memory-safety violations in unsafe code, which can violate the safety of the entire application. In this talk, we explore in-process isolation with Memory Protection Keys as a mechanism to shield safe program sections from safety violations that may happen in unsafe sections. Our approach is easy to use and comprehensive, as it prevents heap and stack-based violations. We further compare process-based and in-process isolation mechanisms and the necessary requirements for data serialization, communication, and context switching. We specifically explored various Rust serialization crates such as Abomonation and bincode. Our results show that in-process isolation can be effective and efficient, permits for a high degree of automation, and also enables a notion of application rewinding where the safe program section may detect and safely handle violations in unsafe code. However, even for modestly sized arguments, the context switch cost starts to get dominated by the cost of data transfer between domains. Here, the Rust data serialization method used can significantly impact performance and thus, it is crucial to optimize it for the use case at hand.
+ We open-source our prototype and experimental evaluation data under a BSD license on GitHub: https://secure-rewind-and-discard.github.io/</p>
 CLASS:PUBLIC
-CATEGORIES:APIs & friends devroom
-URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2163-evolving-your-apis-a-step-by-step-approach/
-LOCATION:AW1.126
-ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Nicolas Fränkel":https://fosdem.org/2024/schedule/speaker/nicolas_frankel/
+CATEGORIES:Rust devroom
+URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2632-friend-or-foe-inside-exploring-in-process-isolation-to-maintain-memory-safety-for-unsafe-rust/
+LOCATION:H.1308 (Rolin)
+ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Merve Gülmez":https://fosdem.org/2024/schedule/speaker/merve_gulmez/
 END:VEVENT
 BEGIN:VEVENT
 UID:2434@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240203T130500Z
 DTEND:20240203T134500Z
 SUMMARY:The Four Horsemen of Bad Rust Code
@@ -105,7 +104,7 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Matthias Endler":https://fos
 END:VEVENT
 BEGIN:VEVENT
 UID:2044@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240203T131000Z
 DTEND:20240203T133000Z
 SUMMARY:Type-safe Queries with Gleam & GraphQL
@@ -119,7 +118,7 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Harry Bairstow":https://fosd
 END:VEVENT
 BEGIN:VEVENT
 UID:1725@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240203T150000Z
 DTEND:20240203T152500Z
 SUMMARY:Zephyr and RISC-V: I Ain't Afraid Of No Ghosts
@@ -150,7 +149,7 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Mohammed Billoo":https://fos
 END:VEVENT
 BEGIN:VEVENT
 UID:2853@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240203T170000Z
 DTEND:20240203T173000Z
 SUMMARY:Domain:  A modular Rust DNS toolkit
@@ -172,7 +171,7 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Martin Hoffmann":https://fos
 END:VEVENT
 BEGIN:VEVENT
 UID:3598@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240204T080000Z
 DTEND:20240204T085000Z
 SUMMARY:Beyond Joins and Indexes
@@ -186,7 +185,7 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Bruce Momjian":https://fosde
 END:VEVENT
 BEGIN:VEVENT
 UID:3575@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240204T090000Z
 DTEND:20240204T092500Z
 SUMMARY:RISC-V Vector Assembly in dav1d
@@ -200,7 +199,7 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Nathan Egge":https://fosdem.
 END:VEVENT
 BEGIN:VEVENT
 UID:2135@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240204T092500Z
 DTEND:20240204T094500Z
 SUMMARY:[JMAP] JMAP: Getting Started
@@ -218,7 +217,7 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Ricardo Signes":https://fosd
 END:VEVENT
 BEGIN:VEVENT
 UID:2261@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240204T111500Z
 DTEND:20240204T113500Z
 SUMMARY:[Servers] Mox: a modern full-featured mail server
@@ -232,7 +231,7 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Mechiel Lukkien":https://fos
 END:VEVENT
 BEGIN:VEVENT
 UID:2340@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240204T122000Z
 DTEND:20240204T124000Z
 SUMMARY:Linker Scripts in LLD and how they compare with GNU ld
@@ -254,7 +253,7 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Peter Smith":https://fosdem.
 END:VEVENT
 BEGIN:VEVENT
 UID:2201@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240204T125000Z
 DTEND:20240204T131500Z
 SUMMARY:Training efficient and open source ML models for private translation in Firefox
@@ -272,7 +271,7 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Marco Castelluccio":https://
 END:VEVENT
 BEGIN:VEVENT
 UID:3611@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240204T130000Z
 DTEND:20240204T135000Z
 SUMMARY:So you think you know Git
@@ -287,52 +286,8 @@ LOCATION:K.1.105 (La Fontaine)
 ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Scott Chacon":https://fosdem.org/2024/schedule/speaker/scott_chacon/
 END:VEVENT
 BEGIN:VEVENT
-UID:3154@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
-DTSTART:20240204T130500Z
-DTEND:20240204T132000Z
-SUMMARY:Project websites that don't suck
-DESCRIPTION:Does the homepage of your project website encourage potential users to try it out? Or is it actively repelling people? Even worse, could it be attracting all the wrong people? In this talk, Emily Omier will walk attendees through the basic structure of a good project website homepage, giving examples of projects with solid websites as well as others that could use improvement. Attendees will leave with a concrete roadmap for either creating their project homepage from scratch or improving the homepage they already have. The focus is on the written content of the website, not on the design.
-X-ALT-DESC:<p>Does the homepage of your project website encourage potential users to try it out? Or is it actively repelling people? Even worse, could it be attracting all the wrong people? In this talk, Emily Omier will walk attendees through the basic structure of a good project website homepage, giving examples of projects with solid websites as well as others that could use improvement. Attendees will leave with a concrete roadmap for either creating their project homepage from scratch or improving the homepage they already have. The focus is on the written content of the website, not on the design.</p>
-CLASS:PUBLIC
-CATEGORIES:Lightning talks
-URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3154-project-websites-that-don-t-suck/
-LOCATION:H.2215 (Ferrer)
-ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Emily Omier":https://fosdem.org/2024/schedule/speaker/emily_omier/
-END:VEVENT
-BEGIN:VEVENT
-UID:2555@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
-DTSTART:20240204T132500Z
-DTEND:20240204T135500Z
-SUMMARY:Building a Linux distro with LLVM
-DESCRIPTION:For the last 3 years, I've been building a complete Linux distribution, Chimera Linux (https://chimera-linux.org) using solely LLVM as its system toolchain - that means Clang, compiler-rt, and libc++, alongside its other tooling. Right now, it is a complete desktop system that is already used by many, with a familiar GNOME interface and thousands of packages, targeting 5 CPU architectures. In this talk I would like to focus on my experiences using the toolchain, what obstacles got in the way, how I dealt with them, the issues that are still left and I would like to see addressed, the many benefits using LLVM gave the project, and overall give the audience an insight into practical deployment of LLVM in a project where it isn't simply a drop-in alternative to GCC.
-X-ALT-DESC:<p>For the last 3 years, I've been building a complete Linux distribution, Chimera Linux (https://chimera-linux.org) using solely LLVM as its system toolchain - that means Clang, compiler-rt, and libc++, alongside its other tooling. Right now, it is a complete desktop system that is already used by many, with a familiar GNOME interface and thousands of packages, targeting 5 CPU architectures. In this talk I would like to focus on my experiences using the toolchain, what obstacles got in the way, how I dealt with them, the issues that are still left and I would like to see addressed, the many benefits using LLVM gave the project, and overall give the audience an insight into practical deployment of LLVM in a project where it isn't simply a drop-in alternative to GCC.</p>
-CLASS:PUBLIC
-CATEGORIES:LLVM devroom
-URL:https://fosdem.org/2024/schedule/event/fosdem-2024-2555-building-a-linux-distro-with-llvm/
-LOCATION:K.4.201
-ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Daniel Kolesa":https://fosdem.org/2024/schedule/speaker/daniel_kolesa/
-END:VEVENT
-BEGIN:VEVENT
-UID:1873@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
-DTSTART:20240204T135000Z
-DTEND:20240204T141000Z
-SUMMARY:Debugging HTTP/3 upload speed in Firefox
-DESCRIPTION:After fixing HTTP/2 (H2) upload speed bugs in 2023 (Bug 1596576), Mozilla's Networking team started to focus on HTTP/3 (H3) upload speed (Bug 1852924).
- The H3 upload speed problem is inherently different from the one in H2. H2 benefits from the mature, operating system-level TCP networking stack. H3 on the other hand is build on top of QUIC, which lacks an operating system API. All networking operations have to be handled in user space. This talk is about the journey of discovering and fixing various H3 upload speed bugs in Firefox using Wireshark, logging, i/o-graphs and more.
-X-ALT-DESC:<p>After fixing HTTP/2 (H2) upload speed bugs in 2023 (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1596576">Bug 1596576</a>), <a href="https://wiki.mozilla.org/Networking">Mozilla's Networking team</a> started to focus on HTTP/3 (H3) upload speed (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1852924">Bug 1852924</a>).</p>
- <p>The H3 upload speed problem is inherently different from the one in H2. H2 benefits from the mature, operating system-level TCP networking stack. H3 on the other hand is build on top of QUIC, which lacks an operating system API. All networking operations have to be handled in user space. This talk is about the journey of discovering and fixing various H3 upload speed bugs in Firefox using Wireshark, logging, i/o-graphs and more.</p>
-CLASS:PUBLIC
-CATEGORIES:Mozilla devroom
-URL:https://fosdem.org/2024/schedule/event/fosdem-2024-1873-debugging-http-3-upload-speed-in-firefox/
-LOCATION:H.1302 (Depage)
-ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Manuel Bucher":https://fosdem.org/2024/schedule/speaker/manuel_bucher/
-END:VEVENT
-BEGIN:VEVENT
 UID:3423@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240204T140000Z
 DTEND:20240204T145000Z
 SUMMARY:Version control post-Git
@@ -350,7 +305,7 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Pierre-Étienne Meunier":htt
 END:VEVENT
 BEGIN:VEVENT
 UID:2931@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240204T143000Z
 DTEND:20240204T145500Z
 SUMMARY:Innovations in H.264/AVC software decoding (Architecture and optimization of a block-based video decoder to reach 10% faster speed and 3x code reduction over the state-of-the-art)
@@ -363,23 +318,8 @@ LOCATION:UB4.132
 ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Thibault Raffaillac":https://fosdem.org/2024/schedule/speaker/thibault_raffaillac/
 END:VEVENT
 BEGIN:VEVENT
-UID:3342@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
-DTSTART:20240204T144500Z
-DTEND:20240204T150000Z
-SUMMARY:The wonderful life of a SQL query in a streaming database
-DESCRIPTION:How do you update materialized views incrementally based on streaming data? In this talk, we follow the life of a query, from the SQL string to the running operators, in a distributed system. This talk follows a SQL query as it runs in RisingWave (https://github.com/risingwavelabs/risingwave), a shared storage streaming system that delivers real-time analytics over unbounded data. We’ll give a brief overview of the systems architecture, and show how the compute layer is used during query processing. You will also discover how this open-source database deploys streaming graphs, scales horizontally, and manages data in motion.
-X-ALT-DESC:<p>How do you update materialized views incrementally based on streaming data? In this talk, we follow the life of a query, from the SQL string to the running operators, in a distributed system.
- This talk follows a SQL query as it runs in RisingWave (https://github.com/risingwavelabs/risingwave), a shared storage streaming system that delivers real-time analytics over unbounded data. We’ll give a brief overview of the systems architecture, and show how the compute layer is used during query processing. You will also discover how this open-source database deploys streaming graphs, scales horizontally, and manages data in motion.</p>
-CLASS:PUBLIC
-CATEGORIES:Lightning talks
-URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3342-the-wonderful-life-of-a-sql-query-in-a-streaming-database/
-LOCATION:H.2215 (Ferrer)
-ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Jan Mensch":https://fosdem.org/2024/schedule/speaker/jan_mensch/
-END:VEVENT
-BEGIN:VEVENT
 UID:1682@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
+DTSTAMP:20240203T070131Z
 DTSTART:20240204T153500Z
 DTEND:20240204T160000Z
 SUMMARY:Map LLVM values to corresponding source-level expressions
@@ -391,19 +331,5 @@ CATEGORIES:LLVM devroom
 URL:https://fosdem.org/2024/schedule/event/fosdem-2024-1682-map-llvm-values-to-corresponding-source-level-expressions/
 LOCATION:K.4.201
 ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Shivam Kunwar":https://fosdem.org/2024/schedule/speaker/shivam_kunwar/
-END:VEVENT
-BEGIN:VEVENT
-UID:3650@2024@be.digitalia.fosdem
-DTSTAMP:20240202T144824Z
-DTSTART:20240204T153500Z
-DTEND:20240204T155000Z
-SUMMARY:Working with Large Language Models
-DESCRIPTION:Large Language Models (LLMs) provide a very compelling option when adding new and interesting features to any code base. But there remain plenty of challenges when trying to integrate (unreliable) intelligence in any code base, especially less popular models. In this talk, we’ll highlight what we learned and how we aim to enable open source knowledge sharing surrounding LLMs.
-X-ALT-DESC:<p>Large Language Models (LLMs) provide a very compelling option when adding new and interesting features to any code base. But there remain plenty of challenges when trying to integrate (unreliable) intelligence in any code base, especially less popular models. In this talk, we’ll highlight what we learned and how we aim to enable open source knowledge sharing surrounding LLMs.</p>
-CLASS:PUBLIC
-CATEGORIES:Mozilla devroom
-URL:https://fosdem.org/2024/schedule/event/fosdem-2024-3650-working-with-large-language-models/
-LOCATION:H.1302 (Depage)
-ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN="Gabriel":https://fosdem.org/2024/schedule/speaker/gabriel/
 END:VEVENT
 END:VCALENDAR
